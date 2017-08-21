@@ -6,8 +6,8 @@
 ---
 Install and run: 
 ```
-git clone https://github.com/cerico/kennedy
-cd kennedy
+git clone https://github.com/cerico/musil
+cd musil
 npm install
 npm run dev
 ```
@@ -27,6 +27,5 @@ npm run build
 # Deploy
 
 ```
-npm run deploy (github pages)
-npm run netl (netlify
+make deploy
 ```
