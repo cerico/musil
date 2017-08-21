@@ -219,4 +219,4 @@ Note the extra 'CMD' command not present in the dev dockerfile.
 Next
 ---
 
-Next up, we'll examine out Clojure API container
+Next up, we'll examine our Clojure API container
