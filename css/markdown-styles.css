@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/*
+
+Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #000;
+  color: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #aeaeae;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #e28964;
+}
+
+.hljs-string {
+  color: #65b042;
+}
+
+.hljs-subst {
+  color: #daefa3;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #e9c062;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-tag,
+.hljs-name {
+  color: #89bdff;
+}
+
+.hljs-class .hljs-title,
+.hljs-doctag {
+  text-decoration: underline;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-number {
+  color: #3387cc;
+}
+
+.hljs-params,
+.hljs-variable,
+.hljs-template-variable {
+  color: #3e87e3;
+}
+
+.hljs-attribute {
+  color: #cda869;
+  
+}
+
+.hljs-meta {
+  color: #8996a8;
+}
+
+.hljs-formula {
+  background-color: #0e2231;
+  color: #f8f8f8;
+  font-style: italic;
+}
+
+.hljs-addition {
+  background-color: #253b22;
+  color: #f8f8f8;
+}
+
+.hljs-deletion {
+  background-color: #420e09;
+  color: #f8f8f8;
+}
+
+.hljs-selector-class {
+  color: #9b703f;
+}
+
+.hljs-selector-id {
+  color: #8b98ab;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+* {
+  font-family: 'Georgia', sans-serif;
+}
+
+body {
+  background: #fcfcfa;
+  color: #333;
+  font-family: "PT Serif", serif;
+  /* font-size: 16px; */
+  line-height: 1.2em;
+  margin: 1em auto 4em auto;
+  max-width: 720px;
+  padding: 0 18px;
+  position: relative;
+}
+
+pre {
+  background: #000;
+  color: #f8f8f8;
+}
+
+pre * {
+  font-family: Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace
+}
+
+h1, h2 {
+    text-rendering: optimizeLegibility;
+}
+
+.topper {
+  font-family: "PT Sans", sans-serif;
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    line-height: 1em;
+    margin: .5em 0;
+}
+
+a {
+  text-decoration:none;
+  color: cornflowerblue
+}
+
+.markdown {
+  margin-top: 1.7rem
+}
