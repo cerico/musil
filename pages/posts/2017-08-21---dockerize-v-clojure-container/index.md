@@ -31,9 +31,8 @@ services:
     clojure:
         build: ./clojure
         volumes:
-          - "./clojure:/src"
-          - /src/node_modules
-        working_dir: /src
+          - "./clojure:/build"
+        working_dir: /build
         command: 'lein run'
         ports:
           - 6801:3009

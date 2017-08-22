@@ -20,6 +20,7 @@ In this series we're going to look at how to build a fully containerized full st
     * Digital Ocean
 7. Ansible
 8. Vagrant
+9. Continuous Integration
 
 We will build 3 linked containers, one Javascipt, a second API container with Clojure, and a proxy container running nginx. Using a reverse proxy to connect our two containers means we can run them on separate ports and not have to worry about issues with CORS.
 
@@ -101,7 +102,7 @@ bundle:
         cd client && npm run build
 
 build:
-        docker-compose build && docker-compose up
+        docker-compose up --build
 
 deploy-do:
         ./bin/digital_ocean/deploy.sh
@@ -144,6 +145,7 @@ Now lets take a look at the docker-compose.yml. This is the docker-compose file 
 ```
 version: "2"
 services:
+
     web:
         build:
           context: ./client
@@ -154,12 +156,16 @@ services:
         working_dir: /build
         command: 'npm run dev'
         ports:
-          - 6800:1998
+          - 6800:5000
 
     clojure:
         build: ./clojure
+        volumes:
+          - "./clojure:/build"
+        working_dir: /build
+        command: 'lein run'
         ports:
-          - 3009:3009
+          - 6801:3009
 
     nginx:
         build: ./proxy
@@ -184,7 +190,7 @@ A straightforward file, with 3 services - or containers. Web, Clojure, and Nginx
 
 * ports
 	* This is a mapping of the ports running inside the container to the ones we will access it from on the 'outside'. If we were to cd into the client container and run 'npm run dev', eg bypassing docker altogether, then our client app would be available on port 1998. Running via docker-compose up (or make start) this is mapped to port 6800, which is where we'll access it in the browser.
-  	* The clojure app runs on 3009 internally and with docker, so its a straight mapping.
+  	* The clojure app runs on 3009 internally and 6801 with docker.
 
 * links
 	* This is our reverse proxy. It links both our containers together, this means the front and back can access each other without needing to worry about CORS issues. It also means we don't need to handle CORS inside the Clojure app, nginx will do that for us. As this is our dev docker-compose we'll be using 3100 not 80 or 443.

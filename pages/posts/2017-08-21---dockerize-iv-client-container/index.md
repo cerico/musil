@@ -31,9 +31,9 @@ services:
           context: ./client
           dockerfile: Dockerfile.dev
         volumes:
-          - "./client:/src"
-          - /src/node_modules
-        working_dir: /src
+          - "./client:/build"
+          - /build/node_modules
+        working_dir: /build
         command: 'npm run dev'
         ports:
           - 6800:5000
@@ -50,7 +50,7 @@ bundle:
 	cd client && npm run build
 
 build:
-	docker-compose build && docker-compose up
+	docker-compose up --build
 ```
 
 We'll run 'make start' when we want to run as normal, and 'make build' if we've made changes like installing new packages. When we run make build, npm install runs inside the client container, installing new packages. If we just run 'make start' then 'npm run dev' is run inside the client, as per the docker-compose.yml. Let's have a look at that.
