@@ -13,7 +13,7 @@ Let's now look at each of our Dockerfiles. Each of the Dockerfiles specifies an 
 ```
 FROM node:8.2.1-alpine
 
-ADD . /build
+COPY . /build
 WORKDIR /build
 RUN /usr/local/bin/npm install
 ```
@@ -29,7 +29,6 @@ FROM clojure:lein-2.7.1-alpine
 COPY . /build
 WORKDIR /build
 RUN /usr/local/bin/lein deps
-
 
 CMD ["lein", "run"]
 ```

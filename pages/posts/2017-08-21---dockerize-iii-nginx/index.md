@@ -175,20 +175,23 @@ services:
           context: ./client
           dockerfile: Dockerfile.dev
         volumes:
-          - "./client:/src"
-          - /src/node_modules
-        working_dir: /src
+          - "./client:/build"
+          - /build/node_modules
+        working_dir: /build
         command: 'npm run dev'
         ports:
           - 6800:5000
 
     clojure:
         build: ./clojure
+        volumes:
+          - "./clojure:/build"
+        working_dir: /build
+        command: 'lein run'
         ports:
           - 6801:3009
 
     nginx:
-        # image: nginx
         build: ./proxy
         ports:
             - "3100:3100"
