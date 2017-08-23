@@ -3,9 +3,8 @@ import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 
 import Summary from 'components/Summary'
-// import { tagMap, getTags, getAllTags, capitalizeFirstLetter } from '../../utils'
 import { config } from 'config'
-import { getAllTags } from '../../utils/tags'
+import { getAllTags, getTags, tagMap } from '../../utils/tags'
 import { prefixLink } from 'gatsby-helpers'
 
 
@@ -33,7 +32,7 @@ const ShowTag = ({ tag, pages, hideSummary }) => {
   return (
     <div>
       <h2>
-        <Link style={style.tagLink} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}> {capitalizeFirstLetter(tag)}
+        <Link style={style.tagLink} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}> {tag}
         </Link>
       </h2>
       <ul>
