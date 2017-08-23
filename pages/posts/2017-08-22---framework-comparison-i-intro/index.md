@@ -2,6 +2,9 @@
 title: Framework Comparison I - Intro
 date: '2017-08-22'
 layout: post
+tags: 
+  - webpack
+  - babel
 ---
 
 The purpose of this series is two fold. The first is to get more of a handle on webpack, and the second is to compare various front end frameworks, alongside vanilla JS. When I first moved over to the front end, we used Angular v1 with Gulp. Things have moved pretty fast since then, and I wanted to be able to compare various frameworks but inside the same project. In my docker series I want, eventually, to be able to compare different server side languages each running in their own container inside the same project - and it struck me that I could actually do pretty much the same for javascript, with webpack acting as a kind of glue. 
