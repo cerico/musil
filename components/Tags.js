@@ -10,8 +10,8 @@ const Tags = props => (props.page && props.page.tags || []).length
       {console.log(props.page)}
         Tags: {props.page.tags.map((tag, i) => (
             // console.log(tag)
-            <span>
-          <Link key={i} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}>
+            <span key={i}>
+          <Link  to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}>
             {tag}
           </Link>
           <span>  </span>

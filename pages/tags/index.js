@@ -4,6 +4,7 @@ import { config } from 'config'
 import { rhythm } from '../../utils/typography'
 import { getAllTags, getTags, tagMap } from '../../utils/getAllTags'
 import { Link } from 'react-router'
+import Summary from '../../components/Summary'
 
 import { prefixLink } from 'gatsby-helpers'
 
@@ -50,10 +51,21 @@ class PostsIndex extends React.Component {
 
   render () {
 
+    const TaggedPage = ({ page }) => (
+      <li>
+        <Link to={prefixLink(page.path)}>
+          {page.data.title}
+        </Link>
+        {<Summary body={page.data.body} />}
+      </li>
+    )
+
     const ShowTag = ({ tag, pages, hideSummary }) => {
       const taggedPages = pages
-        .filter(getTags)
         .filter(page => getTags(page).map(tagMap).indexOf(tag) !== -1)
+        // debugger
+        const a = pages.filter(getTags)
+        // debugger
       return (
         <div>
           <h2>
@@ -61,7 +73,7 @@ class PostsIndex extends React.Component {
             </Link>
           </h2>
           <ul>
-            {taggedPages.map((page, i) => (<div  key={i} page={page} />))}
+            {taggedPages.map((page, i) => (<TaggedPage key={i} page={page} />))}
           </ul>
         </div>
       )
