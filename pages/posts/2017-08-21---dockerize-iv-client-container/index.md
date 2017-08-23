@@ -11,6 +11,23 @@ tags:
 
 We want our client and server containers to be as simple as possible. Our client container is very straightforward. It is only going to do two things, firstly display the message "I am from js", and secondly make a get request to the Clojure API and display the message it receives - which should be "and I'm from Clojure".
 
+TLDR / Repo
+----
+
+Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
+
+Pages
+----
+
+* [Part One - Intro](../2017-08-17---dockerize-i-intro/)
+* [Part Two - Dockerfiles](../2017-08-18---dockerize-ii-dockerfiles/)
+* [Part Three - Nginx](../2017-08-21---dockerize-iii-nginx/) 
+* Part Four - Client App
+* [Part Five - Server App](../2017-08-21---dockerize-v-clojure-container/) 
+* [Part Six - Provisioning](../2017-08-21---dockerize-vi-provision-exoscale/ )
+* [Part Seven - Connect Existing](../2017-08-23---dockerize-vii-connect-existing-machine/) 
+* Part Eight - Ansible - soon
+
 Lets start with reminding ourselves of our docker setup for the client.
 
 ```

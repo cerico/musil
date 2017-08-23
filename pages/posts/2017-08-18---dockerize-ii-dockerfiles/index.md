@@ -9,6 +9,23 @@ tags:
 
 Let's now look at each of our Dockerfiles. Each of the Dockerfiles specifies an image to be used. In order to try and keep size low I've gone for Alpine based images where possible.
 
+TLDR / Repo
+----
+
+Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
+
+Pages
+----
+
+* [Part One - Intro](../2017-08-17---dockerize-i-intro/)
+* Part Two - Dockerfiles
+* [Part Three - Nginx](../2017-08-21---dockerize-iii-nginx/) 
+* [Part Four - Client App](../2017-08-21---dockerize-iv-client-container/) 
+* [Part Five - Server App](../2017-08-21---dockerize-v-clojure-container/) 
+* [Part Six - Provisioning](../2017-08-21---dockerize-vi-provision-exoscale/ )
+* [Part Seven - Connect Existing](../2017-08-23---dockerize-vii-connect-existing-machine/) 
+* Part Eight - Ansible - soon
+
 
 ```
 ➜  marsden git:(master) more client/Dockerfile.dev

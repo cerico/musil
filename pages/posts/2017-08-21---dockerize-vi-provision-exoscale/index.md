@@ -13,6 +13,23 @@ tags:
 
 I usually use Digital Ocean and AWS, and we'll run through both of those but we'll start off with [https://www.exoscale.ch/](exoscale.ch) as they were kind enough to give me $10 credit and its always a good idea to try alternatives out.
 
+TLDR / Repo
+----
+
+Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
+
+Pages
+----
+
+* [Part One - Intro](../2017-08-17---dockerize-i-intro/)
+* [Part Two - Dockerfiles](../2017-08-18---dockerize-ii-dockerfiles/)
+* [Part Three - Nginx](../2017-08-21---dockerize-iii-nginx/) 
+* [Part Four - Client App](../2017-08-21---dockerize-iv-client-container/) 
+* [Part Five - Server App](../2017-08-21---dockerize-v-clojure-container/) 
+* Part Six - Provisioning
+* [Part Seven - Connect Existing](../2017-08-23---dockerize-vii-connect-existing-machine/) 
+* Part Eight - Ansible - soon
+
 ```
 ➜  marsden git:(master) ✗ cat bin/exo/provision.sh
 ```

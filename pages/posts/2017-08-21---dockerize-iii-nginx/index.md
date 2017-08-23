@@ -9,6 +9,23 @@ tags:
 
 The nginx/proxy container serves two purposes. Firstly it will handle requests from the web (port 80/443) and then send those requests to the appropiate container. But secondly it will handle requests *between* containers. In our case we'll have a client container that will need to make requests to the Clojure API container. As they are running on different ports we'll run into CORS errors (where requests from a different domain are automatically dropped). Rather than fiddle about trying to get CORS whitelisting happening within the server container, we can use the nginx container - a cleaner solution.
 
+TLDR / Repo
+----
+
+Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
+
+Pages
+----
+
+* [Part One - Intro](../2017-08-17---dockerize-i-intro/)
+* [Part Two - Dockerfiles](../2017-08-18---dockerize-ii-dockerfiles/)
+* Part Three - Nginx
+* [Part Four - Client App](../2017-08-21---dockerize-iv-client-container/) 
+* [Part Five - Server App](../2017-08-21---dockerize-v-clojure-container/) 
+* [Part Six - Provisioning](../2017-08-21---dockerize-vi-provision-exoscale/ )
+* [Part Seven - Connect Existing](../2017-08-23---dockerize-vii-connect-existing-machine/) 
+* Part Eight - Ansible - soon
+
 Client
 ------
 

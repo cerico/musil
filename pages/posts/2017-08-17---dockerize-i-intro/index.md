@@ -32,6 +32,19 @@ TLDR / Repo
 
 Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
 
+Pages
+----
+
+* Part One - Intro
+* [Part Two - Dockerfiles](../2017-08-18---dockerize-ii-dockerfiles/)
+* [Part Three - Nginx](../2017-08-21---dockerize-iii-nginx/) 
+* [Part Four - Client App](../2017-08-21---dockerize-iv-client-container/) 
+* [Part Five - Server App](../2017-08-21---dockerize-v-clojure-container/) 
+* [Part Six - Provisioning](../2017-08-21---dockerize-vi-provision-exoscale/ )
+* [Part Seven - Connect Existing](../2017-08-23---dockerize-vii-connect-existing-machine/) 
+* Part Eight - Ansible - soon
+
+
 Tree
 ----
 
