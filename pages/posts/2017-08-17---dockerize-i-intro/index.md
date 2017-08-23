@@ -2,19 +2,9 @@
 title: Let's Get Dockerized. Part I
 date: '2017-08-17'
 layout: post
-tags:
+tags: 
   - docker
-  - compose
-  - nginx
-  - clojure
-  - javascript
-  - coreos
-  - deployment
-  - exoscale
-  - aws
-  - digital ocean
-  - ansible
-  - vagrant
+  - make
 ---
 
 In this series we're going to look at how to build a fully containerized full stack application running locally and in the cloud. We're going to use the following.

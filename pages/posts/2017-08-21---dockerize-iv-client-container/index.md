@@ -2,6 +2,11 @@
 title: Dockerize IV - Client Container
 date: '2017-08-21'
 layout: post
+tags: 
+  - docker
+  - webpack
+  - node
+  - javascript
 ---
 
 We want our client and server containers to be as simple as possible. Our client container is very straightforward. It is only going to do two things, firstly display the message "I am from js", and secondly make a get request to the Clojure API and display the message it receives - which should be "and I'm from Clojure".

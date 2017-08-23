@@ -26,7 +26,7 @@ class LinksBar extends React.Component {
   get navItems () {
     const navItems = [
       ['Posts | ', '/'],
-      ['About | ', '/about/']
+      ['About | ', '/about/'],
     ]
 
     navItems.forEach((navItem) => {

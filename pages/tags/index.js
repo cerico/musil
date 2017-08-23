@@ -1,66 +1,110 @@
 import React from 'react'
-import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
-
-import Summary from 'components/Summary'
 import { config } from 'config'
-import { getAllTags, getTags, tagMap } from '../../utils/tags'
+import { rhythm } from '../../utils/typography'
+import { getAllTags, getTags, tagMap } from '../../utils/getAllTags'
+import { Link } from 'react-router'
+import Summary from '../../components/Summary'
+
 import { prefixLink } from 'gatsby-helpers'
 
 
 const style = {
-  tagLink: {
-    color: 'inherit',
-    boxShadow: 'none',
-    textDecoration: 'none'
+  about: {
+    marginTop: '1rem'
+  },
+  listItem: {
+    marginBottom: rhythm(1),
+    listStyle: 'none'
+  },
+  list: {
+    marginLeft: 0
+  },
+  date: {
+    fontSize: rhythm(0.5),
+    color: 'gray',
+    marginBottom: rhythm(0.1)
+  },
+  h3: {
+    marginBottom: rhythm(0.5),
+    display: 'inline-block'
+  },
+  img: {
+    float: 'left',
+    marginTop: rhythm(-0.1),
+    marginBottom: 0,
+    marginRight: rhythm(0.25),
+    width: rhythm(2),
+    height: rhythm(2),
+    borderRadius: '50%',
+    border: '1px gray solid'
+  },
+  inlineviewMoreLink: {
+    marginLeft: rhythm(0.1),
+    display: 'inline-block'
   }
 }
 
-const TaggedPage = ({ page, hideSummary }) => (
-  <li>
-    <Link to={prefixLink(page.data.path)}>
-      {page.data.title}
-    </Link>
-    {hideSummary ? null : <Summary body={page.data.body} />}
-  </li>
-)
+class PostsIndex extends React.Component {
 
-const ShowTag = ({ tag, pages, hideSummary }) => {
-  const taggedPages = pages
-    .filter(getTags)
-    .filter(page => getTags(page).map(tagMap).indexOf(tag) !== -1)
-  return (
-    <div>
-      <h2>
-        <Link style={style.tagLink} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}> {tag}
-        </Link>
-      </h2>
-      <ul>
-        {taggedPages.map((page, i) => (<TaggedPage hideSummary={hideSummary} key={i} page={page} />))}
-      </ul>
-    </div>
-  )
-}
 
-class BlogTags extends React.Component {
+
+
   render () {
+    
+
+    const TaggedPage = ({ page }) => (
+      <li>
+        <Link to={prefixLink(page.path)}>
+          {page.data.title}
+        </Link>
+        {<Summary body={page.data.body} />}
+      </li>
+    )
+
+    const ShowTag = ({ tag, pages, hideSummary }) => {
+      const taggedPages = pages
+        .filter(page => getTags(page).map(tagMap).indexOf(tag) !== -1)
+        // debugger
+        const a = pages.filter(getTags)
+        // debugger
+      return (
+        <div>
+          <h2>
+            <Link style={style.tagLink} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}> {tag}
+            </Link>
+          </h2>
+          <ul>
+            {taggedPages.map((page, i) => (<TaggedPage key={i} page={page} />))}
+          </ul>
+        </div>
+      )
+    }
+  
     const tag = this.props.location.hash.replace('#', '')
     const allTags = tag ? [] : getAllTags(this.props.route.pages)
-    return (
-      <DocumentTitle title={tag ? `${tag} - ${config.blogTitle}` : config.blogTitle}>
+   const mate = getAllTags(this.props.route.pages)
+
+   return (
+ 
+        <div style={style.about}>
+        <div title={tag ? `${tag} - ${config.blogTitle}` : config.blogTitle}>
         <div>
           {tag ? <ShowTag tag={tag} pages={this.props.route.pages} /> : null}
-          {!tag ? allTags.map((tag, i) => <ShowTag hideSummary key={i} tag={tag} pages={this.props.route.pages} />) : null}
         </div>
-      </DocumentTitle>
+      </div>
+
+          <div>
+          </div>
+      
+        </div>
+
     )
   }
 }
 
-BlogTags.propTypes = {
-  route: React.PropTypes.object,
-  location: React.PropTypes.object
+PostsIndex.propTypes = {
+  route: React.PropTypes.object
 }
 
-export default BlogTags
-
+export default PostsIndex

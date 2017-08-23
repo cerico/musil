@@ -1,18 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router'
-// import { tagMap, capitalizeFirstLetter } from 'utils'
+import { tagMap } from '../utils/tagMap'
 import { prefixLink } from 'gatsby-helpers'
-
 
 const Tags = props => (props.page && props.page.tags || []).length
   ? (
-    <div {...props}>
+    <div>
       <span>
+      {console.log(props.page)}
         Tags: {props.page.tags.map((tag, i) => (
-          <Link key={i} to={{ pathname: prefixLink('/tags/'), hash: `#${tag}` }}>
+            // console.log(tag)
+            <span key={i}>
+          <Link  to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}>
             {tag}
           </Link>
-        )).reduce((accu, elem) => accu === null ? [elem] : [...accu, ' | ', elem], null)}
+          <span>  </span>
+          </span>
+        ))}
       </span>
     </div>
   ) : null
