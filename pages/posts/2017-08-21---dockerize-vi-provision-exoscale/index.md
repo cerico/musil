@@ -2,6 +2,13 @@
 title: Dockerize VI - Provision on Exoscale
 date: '2017-08-21'
 layout: post
+tags: 
+  - docker
+  - nginx
+  - exoscale
+  - 'digital ocean'
+  - deployment
+  - coreos
 ---
 
 I usually use Digital Ocean and AWS, and we'll run through both of those but we'll start off with [https://www.exoscale.ch/](exoscale.ch) as they were kind enough to give me $10 credit and its always a good idea to try alternatives out.
