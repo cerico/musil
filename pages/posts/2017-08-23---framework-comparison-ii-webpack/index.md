@@ -2,6 +2,12 @@
 title: Framework Comparison II - Webpack
 date: '2017-08-23'
 layout: post
+tags: 
+  - webpack
+  - javascript
+  - react
+  - vue
+  - hyperapp
 ---
 
 Our comparison app is going to have four builds, each with its own webpack confg, so we'll move the various webpack files into their own directory.
