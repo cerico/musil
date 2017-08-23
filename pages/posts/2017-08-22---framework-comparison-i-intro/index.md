@@ -1,5 +1,5 @@
 ---
-title: framework comparison i - intro
+title: Framework Comparison I - Intro
 date: '2017-08-22'
 layout: post
 ---
@@ -84,8 +84,6 @@ package.json
 Each of the four builds has its own script - eg 'npm run vue', and references their webpack build. I ran into some interesting babel issues trying to run both hyperapp and react, which we'll look at shortly, but thats why we've prefaced those scripts with a NODE_ENV.
 
 Fairly lean on the dependencies, as at this stage we're not looking to do very much, so this should be as bare bones as possible.
-
-.babel-rc
 
 ```
 ➜  cooper git:(master) cat .babelrc
