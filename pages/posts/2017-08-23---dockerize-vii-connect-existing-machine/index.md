@@ -143,9 +143,78 @@ marsden    -        digitalocean   Running   tcp://139.59.189.142:2376          
 york       -        generic        Running   tcp://192.168.99.150:2376            v17.06.0-ce
 ```
 
-If docker-machine had a straightforward add command I might be more inclined to use this, but I got for enough to at least try and document to some extent
+We can add a deploy script to push our containers to this machine
+
+```
+➜  marsden git:(recordcafe) cat bin/york/deploy.sh
+```
+```
+eval $(docker-machine env york)
+docker-compose -f docker-compose.prod.yml build && docker-compose -f docker-compose.prod.yml up -d
+eval $(docker-machine env -u)
+```
+
+For now I'm just pushing the production environment. We can also later move the dev environment to using the vm's docker. Then we'll have moved all our docker hosts off OSX and onto remote docker machines, leaving OSX to function purely as a controller. 
+
+I've added a new file in sites-enabled, to cater for our local vm, keeping it separate from our production and dev files
+
+```
+➜  marsden git:(recordcafe) cat proxy/sites-enabled/mars.york.conf
+```
+```
+server {
+    listen 80;
+    server_name 192.168.99.150 mars.york;
+    location / {
+        proxy_pass http://front;
+    }
+    location /clojure {
+        proxy_pass   http://back;
+    }
+} 
+```
+
+This will listen on the vms ip address, and also on mars.york - which we can setup in the mac's host file.
+
+```
+➜  marsden git:(recordcafe) grep 150 /etc/hosts
+192.168.99.150 mars.york
+```
+
+Troubleshooting
+---
+
+I did get this error...
+
+```
+Recreating 6a1cdddb3c96_marsden_nginx_1 ... error
+
+ERROR: for 6a1cdddb3c96_marsden_nginx_1  Cannot start service nginx: driver failed programming external connectivity on endpoint marsden_nginx_1 (ea9a2414d915d3d6c6dc880ab56742e5fbb44874a21f5e5e94f9efdc003ba749): Error starting userland proxy: listen tcp 0.0.0.0:80: bind: address already in use
+```
+
+This is because debian's own nginx was running on port 80.
+```
+☁  ~  ps -ef | grep nginx
+root     11460     1  0 09:34 ?        00:00:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+```
+
+So that needs to be turned off
+
+```
+☁  ~  sudo /etc/init.d/nginx stop
+[ ok ] Stopping nginx (via systemctl): nginx.service.
+```
+
+And prevented from attempting to start at boot time.
+
+```
+☁  ~  sudo systemctl disable nginx
+Synchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install disable nginx
+```
 
 Next up
+---
 
 Ansible!
 
