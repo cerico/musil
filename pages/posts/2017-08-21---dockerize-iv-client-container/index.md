@@ -207,7 +207,7 @@ module.exports = options => {
 }
 ```
 
-Pretty similar to our dev webpack, but it doesn't server anything, it simply outputs our prod ready bundle to the dist folder. We can then use express to serve it, instead of webpack...
+Pretty similar to our dev webpack, but it doesn't serve anything, it simply outputs our prod ready bundle to the dist folder. We can then use express to serve it, instead of webpack...
 
 ```
 ➜  marsden git:(master) cat client/server.js
