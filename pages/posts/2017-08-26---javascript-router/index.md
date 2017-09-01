@@ -30,7 +30,7 @@ TLDR / Repo
 ---
 Repo is at [https://github.com/cerico/how-to-js-router](https://github.com/cerico/how-to-js-router)
 
-Initial Setup
+Stage One - Initial Setup
 ---
 
 ```
@@ -84,7 +84,7 @@ module.exports = options => {
 }
 ```
 
-I'm assuming webpack knowledge here, but for an explanation of this setup, check  [How To Webpack](../2017-08-31---simple-webpack-setup/)
+All we need to know for now for webpack, is the entrypoints for the index.html file and main js, src/js/index.js and src/index.html.
 
 ```
 ➜  how-to-js-router git:(dev) cat src/js/index.js
@@ -107,8 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
 ```
 
 This is our view before we add the router, we should be outputting the word text to screen, and nothing more.
+ 
+![view](https://s3.amazonaws.com/how-to-js-router/how-to-js-router-one.png
+ "view")
 
-I - Click Event
+Repo at stage 1:  [https://github.com/cerico/how-to-js-router/tree/0.1](https://github.com/cerico/how-to-js-router/tree/0.1)
+
+Stage Two - Attach Click
 ---
 ```
 ➜  how-to-js-router git:(dev) ✗ cat src/js/delph.js
@@ -158,8 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 Returning to the index file, we import our new 'Delph' router. We then initiated an instance of the router for us to use., and we pass it the 'main' element. We also attach a click event to the header, which will run the load function and pass it some text, 'glossop'. The load function passes this text to our nascent router's load function, which will attach it to the 'main' element we passed it earlier.
 
-This branch can be found here (pic)
-II - Routes
+![view](https://dl.dropboxusercontent.com/s/jw1jrxphzhmksnt/25FEE563-0988-4789-BEC7-A142DA34BFE6-517-00006B2B1B98B4F1.gif?dl=0 "click")
+
+Repo at stage 2:  [https://github.com/cerico/how-to-js-router/tree/0.2](https://github.com/cerico/how-to-js-router/tree/0.2)
+
+Stage Three - Routes
 ----
 So now we have a placeholder, where our router is going to live, but now we need to pass it some routes so we can display something other 'glossop'. Lets make a routes object.
 
@@ -191,7 +199,7 @@ export class Index {
     constructor(){      
       var header = document.getElementById('header')
       var main = document.getElementById('main')
-      header.innerHTML = "header"
+      header.innerHTML = "click"
       header.addEventListener('click', () => {this.load('glossop')})
       this.delph = new Delph(routes,main)
     }
@@ -205,10 +213,10 @@ document.addEventListener('DOMContentLoaded', () => {
 ```
 
 
-
-
 ```
 ➜  how-to-js-router git:(dev) ✗ cat src/js/delph.js
+```
+```
 export class Delph {
 
     constructor(routes,el){
@@ -222,9 +230,11 @@ export class Delph {
 }
 ```
 
-Great, so now we've passed it the routes, but the click event is still just passing it 'glossop'. And, with 'header' we  only have one link to click on!
+Great, so now we've passed it the routes, but the click event is still just passing it 'glossop'. And, with 'header' we still only have one link to click on!
 
-III - Links
+Repo at stage 3:  [https://github.com/cerico/how-to-js-router/tree/0.3](https://github.com/cerico/how-to-js-router/tree/0.3)
+
+Stage Four - Create Links and display route content
 ---
 
 Lets populate the header with a link for each route. We could make an array with each of the named routes, and iterate over them, attaching a click handler. But we already have a routes object, so lets iterate over that instead.
@@ -284,7 +294,12 @@ export class Delph {
 }
 ```
 
-III -  Fetch
+![view](https://dl.dropboxusercontent.com/s/c4e4g0euoh0lhy6/C25955EF-BBED-406A-8B05-2408D80FEDB0-517-00006BF7DFD0291D.gif?dl=0 "links")
+
+Repo at stage 4:  [https://github.com/cerico/how-to-js-router/tree/0.4](https://github.com/cerico/how-to-js-router/tree/0.4)
+
+Stage Five - Fetch
+---
 
 Great, we now have a working router. Which works just fine...but we're fairly limited and have to add all our page data inside the routes object, which is going to get pretty unwieldly. A better approach is to put our html into template files, and use fetch to retrieve them.
 
@@ -339,6 +354,8 @@ Now lets updated the routes file to use the Page component.
 
 ```
 ➜  how-to-js-router git:(dev) ✗ cat src/js/routes.js
+```
+```
 import { Page } from './page';
 
 export const routes = {
@@ -390,6 +407,11 @@ export class Delph {
     }
 }
 ```
+
+![view](https://dl.dropboxusercontent.com/s/1eezazgojfxtbgm/3245843A-4405-4732-B6FA-8DBEDC2BF784-517-00006CA2AEB59D6C.gif?dl=0)
+
+Repo at stage 5:  [https://github.com/cerico/how-to-js-router/tree/0.5](https://github.com/cerico/how-to-js-router/tree/0.5)
+
 Next
 ---
 
