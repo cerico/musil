@@ -12,13 +12,19 @@ class Wrapper extends React.Component {
   
   render () {
 
-    const style = {}
+    const style = {
+      date: {
+        fontSize: '2rem',
+        color: '#9EABB3',
+        marginBottom: '15px'
+      }
+    }
     const post = this.props.route.page.data
     const page = this.props.route.page.data
     const header = (
       <div>
         
-        {!page.date ? null : <div style={style.date}>{getPageDate(this.props.route.page)}</div>}
+        {!page.date ? null : <div style={style.date}>{getPageDate(this.props.route.page)} in <Tags page={page} style={style.Tags} /></div>}
       </div>
     )
 
@@ -37,6 +43,7 @@ class Wrapper extends React.Component {
         <Helmet
           title={`${config.siteTitle} | ${post.title}`}
         />
+        {header}
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
         {footer}

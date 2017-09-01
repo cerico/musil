@@ -5,20 +5,17 @@ import { prefixLink } from 'gatsby-helpers'
 
 const Tags = props => (props.page && props.page.tags || []).length
   ? (
-    <div>
-      <span>
-      {console.log(props.page)}
-        Tags: {props.page.tags.map((tag, i) => (
-            // console.log(tag)
-            <span key={i}>
-          <Link  to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}>
-            {tag}
-          </Link>
-          <span>  </span>
+    
+      <span style={{display:'inline'}}>
+        {props.page.tags.map((tag, i) => (
+          <span key={i} style={{marginRight:'8px',lineHeight:'1.5'}}>
+            <Link style={{color:'rgb(158, 171, 179)',display:'inline-block'}} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}>
+              {tag}, 
+            </Link>
           </span>
         ))}
       </span>
-    </div>
+
   ) : null
 
 export default Tags
