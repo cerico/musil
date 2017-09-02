@@ -1,10 +1,11 @@
 ---
-title: Framework Comparison II - Webpack
+title: Framework Comparison
 date: '2017-08-23'
 layout: post
 tags: 
   - Webpack
   - Javascript
+brief: Part 2 Using webpack configuration to build React, Vue, Hyperapp and Vanilla JS within the same application.
 ---
 
 Our comparison app is going to have four builds, each with its own webpack confg, so we'll move the various webpack files into their own directory.

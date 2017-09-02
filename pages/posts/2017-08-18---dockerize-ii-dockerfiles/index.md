@@ -1,10 +1,11 @@
 ---
-title: Dockerize II -  Dockerfiles
+title: Writing Dockerfiles
 date: '2017-08-18'
 layout: post
 tags: 
   - Docker
   - Nginx
+brief: Full Stack Docker Application Part 2 - Writing Dockerfiles for the Nginx, Clojure and Javascript containers. 
 ---
 
 Let's now look at each of our Dockerfiles. Each of the Dockerfiles specifies an image to be used. In order to try and keep size low I've gone for Alpine based images where possible.

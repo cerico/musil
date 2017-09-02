@@ -1,10 +1,11 @@
 ---
-title: Let's Get Dockerized. Part I
+title: Full Stack Docker Application
 date: '2017-08-17'
 layout: post
 tags: 
   - Docker
   - Make
+brief: Part 1 - Building a dockerized full stack app, with Javascript, Clojure and Nginx
 ---
 
 In this series we're going to look at how to build a fully containerized full stack application running locally and in the cloud. We're going to use the following.

@@ -4,18 +4,20 @@ date: '2017-08-26'
 layout: post
 tags:
  - Javascript
+ - ES6
+brief: Building a client javascript router in vanilla es6 js, that handles refresh and deep linking and doesn't require hashbang URLs.
 ---
 
-Introduction.
----
 In this application we'll learn how to build a client-side router with vanilla Javascript. We have 3 main requirements
 
 * It should link us to a new page without a server visit
 * It should handle the back button
 * It should handle page refreshes and direct linking
 
-Pre-requisites.
----
+___
+
+### Pre-requisites.
+
 Npm and Node. These are the versions I'm running
 
 ```
@@ -24,14 +26,17 @@ v7.7.2
 ➜  ~ npm -v
 5.3.0
 ```
+___
 
 
-TLDR / Repo
----
+### TLDR / Repo
+
 Repo is at [https://github.com/cerico/how-to-js-router](https://github.com/cerico/how-to-js-router)
 
-Stage One - Initial Setup
----
+___
+
+### Stage One - Initial Setup
+
 
 ```
 ➜  how-to-js-router git:(dev) tree
@@ -112,9 +117,10 @@ This is our view before we add the router, we should be outputting the word text
  "view")
 
 Repo at stage 1:  [https://github.com/cerico/how-to-js-router/tree/0.1](https://github.com/cerico/how-to-js-router/tree/0.1)
+___
 
-Stage Two - Attach Click
----
+### Stage Two - Attach Click
+
 ```
 ➜  how-to-js-router git:(dev) ✗ cat src/js/delph.js
 ```
@@ -166,9 +172,10 @@ Returning to the index file, we import our new 'Delph' router. We then initiated
 ![view](https://dl.dropboxusercontent.com/s/jw1jrxphzhmksnt/25FEE563-0988-4789-BEC7-A142DA34BFE6-517-00006B2B1B98B4F1.gif?dl=0 "click")
 
 Repo at stage 2:  [https://github.com/cerico/how-to-js-router/tree/0.2](https://github.com/cerico/how-to-js-router/tree/0.2)
+___
 
-Stage Three - Routes
-----
+### Stage Three - Routes
+
 So now we have a placeholder, where our router is going to live, but now we need to pass it some routes so we can display something other 'glossop'. Lets make a routes object.
 
 
@@ -233,9 +240,10 @@ export class Delph {
 Great, so now we've passed it the routes, but the click event is still just passing it 'glossop'. And, with 'header' we still only have one link to click on!
 
 Repo at stage 3:  [https://github.com/cerico/how-to-js-router/tree/0.3](https://github.com/cerico/how-to-js-router/tree/0.3)
+___
 
-Stage Four - Create Links and display route content
----
+### Stage Four - Create Links and display route content
+
 
 Lets populate the header with a link for each route. We could make an array with each of the named routes, and iterate over them, attaching a click handler. But we already have a routes object, so lets iterate over that instead.
 
@@ -297,9 +305,10 @@ export class Delph {
 ![view](https://dl.dropboxusercontent.com/s/c4e4g0euoh0lhy6/C25955EF-BBED-406A-8B05-2408D80FEDB0-517-00006BF7DFD0291D.gif?dl=0 "links")
 
 Repo at stage 4:  [https://github.com/cerico/how-to-js-router/tree/0.4](https://github.com/cerico/how-to-js-router/tree/0.4)
+___
 
-Stage Five - Fetch
----
+### Stage Five - Fetch
+
 
 Great, we now have a working router. Which works just fine...but we're fairly limited and have to add all our page data inside the routes object, which is going to get pretty unwieldly. A better approach is to put our html into template files, and use fetch to retrieve them.
 
@@ -411,9 +420,10 @@ export class Delph {
 ![view](https://dl.dropboxusercontent.com/s/1eezazgojfxtbgm/3245843A-4405-4732-B6FA-8DBEDC2BF784-517-00006CA2AEB59D6C.gif?dl=0)
 
 Repo at stage 5:  [https://github.com/cerico/how-to-js-router/tree/0.5](https://github.com/cerico/how-to-js-router/tree/0.5)
+___
 
-Next
----
+### Next
+
 
 In part II we'll look at updating the url, and handling refreshing and permanent links.
 

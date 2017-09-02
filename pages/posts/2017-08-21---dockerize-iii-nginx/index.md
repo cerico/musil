@@ -1,10 +1,11 @@
 ---
-title: Dockerize III - Nginx
+title: Nginx in Docker
 date: '2017-08-21'
 layout: post
 tags: 
   - Docker
   - Nginx
+brief: Full Stack Docker Application Part 3 - Building an Nginx Container.
 ---
 
 The nginx/proxy container serves two purposes. Firstly it will handle requests from the web (port 80/443) and then send those requests to the appropiate container. But secondly it will handle requests *between* containers. In our case we'll have a client container that will need to make requests to the Clojure API container. As they are running on different ports we'll run into CORS errors (where requests from a different domain are automatically dropped). Rather than fiddle about trying to get CORS whitelisting happening within the server container, we can use the nginx container - a cleaner solution.

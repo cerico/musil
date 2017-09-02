@@ -1,5 +1,5 @@
 ---
-title: Dockerize IV - Client Container
+title: Javascript Container
 date: '2017-08-21'
 layout: post
 tags: 
@@ -7,6 +7,7 @@ tags:
   - Webpack
   - Node
   - Javascript
+brief: Full Stack Docker Application 4 - Building a client container for  Javascript
 ---
 
 We want our client and server containers to be as simple as possible. Our client container is very straightforward. It is only going to do two things, firstly display the message "I am from js", and secondly make a get request to the Clojure API and display the message it receives - which should be "and I'm from Clojure".

@@ -1,9 +1,10 @@
 ---
-title: Dockerize VII - Connect Existing Machine
+title: Connect to an existing Docker Machine
 date: '2017-08-23'
 layout: post
 tags: 
   - Docker
+brief: Full Stack Docker Application Part 7 - Moving dev environment to Vagrant by connecting Docker Machine to existing Debian and CoreOS docker hosts running in Vagrant VMs.
 ---
 
 We can use docker-machine to create a boot2docker instance, but if we want to replicate our production exoscale, digital ocean and aws machines as closely as possible we'll want to use CoreOS instead. For this we'll need Vagrant and VirtualBox installed. We'll setup a debian box with vagrant and then try and connect to it with docker-machine and bring it under docker-machine control.
