@@ -16,7 +16,7 @@ class Wrapper extends React.Component {
       date: {
         fontSize: '2rem',
         color: '#9EABB3',
-        marginBottom: '15px'
+        marginBottom: '1px'
       }
     }
     const post = this.props.route.page.data
@@ -39,7 +39,7 @@ class Wrapper extends React.Component {
     
     
     return (
-      <div className="markdown">
+      <div className="markdown content">
         <Helmet
           title={`${config.siteTitle} | ${post.title}`}
         />

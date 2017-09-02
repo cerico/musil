@@ -19,10 +19,13 @@ class Template extends React.Component {
     const { children } = this.props
     return (
       <div>
+       
         <Headroom >
-          <Link  to="/" className="topper">{config.siteName}</Link>
-        </Headroom>
-        <hr style={{marginTop: '1.07rem'}}/>
+        <header role="banner">
+        <Link  to="/" className="inverse-topper">{config.siteName}</Link>
+        </header>
+      </Headroom>
+       
         <Bio/>
         <LinksBar/>
         {children}
@@ -38,3 +41,11 @@ Template.propTypes = {
 }
 
 export default Template
+
+
+// <Headroom >
+// <Link  to="/" className="topper">{config.siteName}</Link>
+// </Headroom>
+
+
+// <hr style={{marginTop: '1.07rem'}}/>
