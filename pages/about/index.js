@@ -3,13 +3,14 @@ import DocumentTitle from 'react-document-title'
 import { config } from 'config'
 import { rhythm } from '../../utils/typography'
 import { Link } from 'react-router'
+import 'css/markdown-styles.css'
 
 import { prefixLink } from 'gatsby-helpers'
 
 
 const style = {
   about: {
-    marginTop: '1rem'
+    marginTop: '1rem',
   },
   listItem: {
     marginBottom: rhythm(1),
@@ -50,7 +51,7 @@ class PostsIndex extends React.Component {
   render () {
     return (
  
-        <div style={style.about}>
+        <div className="page-content" style={style.about}>
 
           <div>
           </div>

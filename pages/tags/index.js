@@ -4,6 +4,8 @@ import { config } from 'config'
 import { rhythm } from '../../utils/typography'
 import { getAllTags, getTags, tagMap } from '../../utils/getAllTags'
 import { Link } from 'react-router'
+import { getPageDate } from '../../utils/getPageDate'
+import 'css/markdown-styles.css'
 import Summary from '../../components/Summary'
 
 import { prefixLink } from 'gatsby-helpers'
@@ -42,6 +44,24 @@ const style = {
   inlineviewMoreLink: {
     marginLeft: rhythm(0.1),
     display: 'inline-block'
+  },
+  tagLink: {
+    color:' rgb(158, 171, 179)',
+    fontFamily: '"Fira Sans",sans-serif',
+    fontSize: '2rem',
+    fontWeight:'200'
+  },
+  taggedPage: {
+    listStyle: 'none',
+    fontFamily: 'Raleway',
+    fontSize: '4rem',
+    // fontFamily: 'roboto'
+  },
+  date: {
+    fontSize:'1.05rem',
+    color:' rgb(158, 171, 179)',
+    textAlign:'right',
+    marginRight:'8%'
   }
 }
 
@@ -54,27 +74,28 @@ class PostsIndex extends React.Component {
     
 
     const TaggedPage = ({ page }) => (
-      <li>
-        <Link to={prefixLink(page.path)}>
+      <li style={style.taggedPage}>
+        <Link style={style.taggedPage} to={prefixLink(page.path)}>
           {page.data.title}
         </Link>
-        {<Summary body={page.data.body} />}
+        {<Summary style={style.tagLink} body={page.data.brief} />}
+        <div style={style.date}>
+        {getPageDate(page)}
+      </div>
       </li>
     )
 
     const ShowTag = ({ tag, pages, hideSummary }) => {
       const taggedPages = pages
-        .filter(page => getTags(page).map(tagMap).indexOf(tag) !== -1)
+        .filter(page => getTags(page).map(tagMap).indexOf(tag) !== -1).reverse()
         // debugger
         const a = pages.filter(getTags)
         // debugger
       return (
         <div>
           <h2>
-            <Link style={style.tagLink} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}> {tag}
-            </Link>
           </h2>
-          <ul>
+          <ul style={style.taggedPage}>
             {taggedPages.map((page, i) => (<TaggedPage key={i} page={page} />))}
           </ul>
         </div>
@@ -87,7 +108,7 @@ class PostsIndex extends React.Component {
 
    return (
  
-        <div style={style.about}>
+        <div className="page-content" style={style.about}>
         <div title={tag ? `${tag} - ${config.blogTitle}` : config.blogTitle}>
         <div>
           {tag ? <ShowTag tag={tag} pages={this.props.route.pages} /> : null}

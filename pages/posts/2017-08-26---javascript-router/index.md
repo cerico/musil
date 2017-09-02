@@ -137,7 +137,7 @@ export class Delph {
     }
 }
 ```
-Here is is the beginning of our router. Its going to be initiated with an element, and have a load function that will attach some html to the element. And we will export it for use in our index file. Thats it for now!
+Here is the beginning of our router. Its going to be initiated with an element, and have a load function that will attach some html to the element. And we will export it for use in our index file. Thats it for now!
 
 ```
 ➜  how-to-js-router git:(dev) ✗ cat src/js/index.js

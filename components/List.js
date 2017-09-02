@@ -43,7 +43,9 @@ const style = {
   },
   headline: {
     fontSize: '4rem',
-    lineHeight: '1'
+    lineHeight: '1',
+    fontFamily: 'raleway',
+    marginBottom:'15px'
   }
 }
 
