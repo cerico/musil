@@ -3,7 +3,7 @@ title: How to build a JS Router
 date: '2017-08-26'
 layout: post
 tags:
- - javascript
+ - Javascript
 ---
 
 Introduction.

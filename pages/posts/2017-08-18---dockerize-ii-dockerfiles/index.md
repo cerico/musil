@@ -3,8 +3,8 @@ title: Dockerize II -  Dockerfiles
 date: '2017-08-18'
 layout: post
 tags: 
-  - docker
-  - nginx
+  - Docker
+  - Nginx
 ---
 
 Let's now look at each of our Dockerfiles. Each of the Dockerfiles specifies an image to be used. In order to try and keep size low I've gone for Alpine based images where possible.

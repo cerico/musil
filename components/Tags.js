@@ -3,6 +3,10 @@ import { Link } from 'react-router'
 import { tagMap } from '../utils/tagMap'
 import { prefixLink } from 'gatsby-helpers'
 
+const Comma = props =>  (props.i < props.length-1) ? (
+  <span>,</span>
+) : <span></span>
+
 const Tags = props => (props.page && props.page.tags || []).length
   ? (
     
@@ -10,8 +14,10 @@ const Tags = props => (props.page && props.page.tags || []).length
         {props.page.tags.map((tag, i) => (
           <span key={i} style={{marginRight:'8px',lineHeight:'1.5'}}>
             <Link style={{color:'rgb(158, 171, 179)',display:'inline-block'}} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}>
-              {tag}, 
+              {tag}
+            
             </Link>
+            <Comma length={props.page.tags.length} i={i}/> 
           </span>
         ))}
       </span>

@@ -3,8 +3,8 @@ title: Dockerize V - Clojure Container
 date: '2017-08-21'
 layout: post
 tags: 
-  - docker
-  - clojure
+  - Docker
+  - Clojure
 ---
 
 I've never used Clojure before building this project. I wanted to have a simple API container that just returned a message and nothing else, and rather than use Rails or Node/Express it seemed a good opportunity to try something completely unknown. Both Clojure and Elixir were at the top of my list, and Clojure won out, thanks to a hard fought best of 5 coin toss.
