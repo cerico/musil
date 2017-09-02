@@ -6,9 +6,12 @@ import { getPageDate } from '../utils/getPageDate'
 import access from 'safe-access'
 
 import Summary from './Summary'
+import Tags from './Tags'
 
 const style = {
   listItem: {
+    margin: '0 auto',
+    width: '80%',
     marginBottom: rhythm(1),
     listStyle: 'none'
   },
@@ -16,7 +19,7 @@ const style = {
     marginLeft: 0
   },
   date: {
-    fontSize: rhythm(0.5),
+    fontSize: rhythm(0.8),
     color: 'gray',
     marginBottom: rhythm(0.1)
   },
@@ -37,6 +40,10 @@ const style = {
   inlineviewMoreLink: {
     marginLeft: rhythm(0.1),
     display: 'inline-block'
+  },
+  headline: {
+    fontSize: '4rem',
+    lineHeight: '1'
   }
 }
 
@@ -46,15 +53,19 @@ class PostsList extends React.Component {
     const pageTitle = access(page, 'data.title') || page.path
     const image = access(page, 'data.image')
 
+  //  console.log(page.data.tags)
+
     let listItemContents = (
+
+    
       <div>
-        <Link to={prefixLink(page.path)}>
-          {pageTitle}
-        </Link>
         <div style={style.date}>
           {getPageDate(page)}
         </div>
-        <Summary body={page.data.body} />
+        <Link style={style.headline} to={prefixLink(page.path)}>
+          {pageTitle}
+        </Link>
+        <Summary body={page.data.brief} />
       </div>
     )
 
@@ -118,7 +129,7 @@ class PostsList extends React.Component {
     }
 
     return (
-      <div>
+      <div className="content">
         {this.title}
         <ul style={style.list}>
           {list}
@@ -141,3 +152,6 @@ PostsList.propTypes = {
 }
 
 export default PostsList
+
+
+// in  <Tags page={page.data} />

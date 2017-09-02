@@ -16,7 +16,14 @@ class Wrapper extends React.Component {
       date: {
         fontSize: '2rem',
         color: '#9EABB3',
-        marginBottom: '1px'
+        marginBottom: '1px',
+        textAlign: 'center'
+      },
+      pageTitle: {
+        fontSize: '4rem',
+        marginBottom:'1rem'
+      },
+      pageBody: {
       }
     }
     const post = this.props.route.page.data
@@ -39,13 +46,13 @@ class Wrapper extends React.Component {
     
     
     return (
-      <div className="markdown content">
+      <div className="markdown page-content">
         <Helmet
           title={`${config.siteTitle} | ${post.title}`}
         />
         {header}
-        <h1>{post.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.body }} />
+        <h1 style={style.pageTitle}>{post.title}</h1>
+        <div style={style.pageBody} dangerouslySetInnerHTML={{ __html: post.body }} />
         {footer}
       </div>
     )
