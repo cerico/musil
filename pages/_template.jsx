@@ -25,9 +25,10 @@ class Template extends React.Component {
         <Link  to="/" className="inverse-topper">{config.siteName}</Link>
         </header>
       </Headroom>
-       
+       <div style={{marginLeft:'2%'}}>
         <Bio/>
         <LinksBar/>
+        </div>
         {children}
       </div>
     )

@@ -6,7 +6,7 @@ import { prefixLink } from 'gatsby-helpers'
 
 const style = {
   img: {
-    float: 'left',
+    // float: 'left',
     marginTop: 0,
     marginBottom: 0,
     marginRight: rhythm(0.25),
