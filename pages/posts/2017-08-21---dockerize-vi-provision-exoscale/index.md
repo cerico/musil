@@ -14,13 +14,17 @@ brief: Full Stack Docker Application Part 6 - How to send dockerized application
 
 I usually use Digital Ocean and AWS, and we'll run through both of those but we'll start off with [https://www.exoscale.ch/](exoscale.ch) as they were kind enough to give me $10 credit and its always a good idea to try alternatives out.
 
-TLDR / Repo
-----
+___
+
+### TLDR / Repo
+
 
 Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
 
-Pages
-----
+___
+
+### Pages
+
 
 * [Part One - Intro](../2017-08-17---dockerize-i-intro/)
 * [Part Two - Dockerfiles](../2017-08-18---dockerize-ii-dockerfiles/)
@@ -109,8 +113,10 @@ deploy-exo:
 
 In the makefile, i've linked deploy scripts for 3 providers. I've left provisioning out of the makefile for now, at least until we introduce Ansible. To deploy our containerized app to exoscale, we can just run 'make deploy-exo', which will run the deploy script.
 
-Deploy Scripts
----
+___
+
+### Deploy Scripts
+
 
 ```
 ➜  marsden git:(master) ✗ cat bin/exo/deploy.sh
@@ -123,9 +129,10 @@ eval $(docker-machine env -u)
 ```
 
 This will set our active docker-machine to be kemerovo, for the lifetime of the script only. It will the production versions of the docker-compose script (docker-compose.prod.yml), and it will run it in a detached state (-d), as we want to run it as a background job. Let's look at the production docker-compose.yml.
+___
 
-Compose file
----
+### Compose file
+
 
 ```
 ➜  marsden git:(master) ✗ cat docker-compose.prod.yml
@@ -154,10 +161,12 @@ services:
 
 Essentially the same as the dev compose file, with four main differences. Firstly, we're no longer mounting volumes or attempting to access either the client or server containers directly. Secondly, we're not specifying a dockerfile, which means the default Dockerfile for each container will be used instead of eg Dockerfile.dev
 
-Thirdly, the nginx container is going to be listening on port 80, not 3100, so we can access it via url. Fourthly, we have a restart always command. As we're running these in the background, if we reboot or there is a problem with anything we want the containers to restart automatically
+Thirdly, the nginx container is going to be listening on port 80, not 3100, so we can access it via url. Fourthly, we have a restart always command. As we're running these in the background, if we reboot or there is a problem with anything we want the containers to restart automatically.
 
-Nginx
----
+___
+
+### Nginx
+
 
 Lets look at nginx again this time, at the production version of our mars.conf
 
@@ -207,8 +216,10 @@ server {
 
 Now when we look at our default.conf we can see that if anyone attempts to reach any subdomains they will get an index.html just saying 'mars!'. We can add more subdomains pointing to other containers, as we see fit - and put a generic message here.
 
-AWS + DO
----
+___
+
+### AWS + DO
+
 
 Digital Ocean is much the same, provision script
 
@@ -238,8 +249,10 @@ docker-compose -f docker-compose.prod.yml build && docker-compose -f docker-comp
 eval $(docker-machine env -u)
 ```
 
-Next
+___
 
-In the next post we'll look at streamlining the orchestration, management and provisioning of our docker machines with Ansible.
+### Next
+
+[Part Seven - Connect Existing](../2017-08-23---dockerize-vii-connect-existing-machine/) 
 
 

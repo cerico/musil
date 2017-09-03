@@ -28,13 +28,13 @@ In this series we're going to look at how to build a fully containerized full st
 
 We will build 3 linked containers, one Javascipt, a second API container with Clojure, and a proxy container running nginx. Using a reverse proxy to connect our two containers means we can run them on separate ports and not have to worry about issues with CORS.
 
-TLDR / Repo
-----
+### TLDR / Repo
+
 
 Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
 
-Pages
-----
+### Pages
+
 
 * Part One - Intro
 * [Part Two - Dockerfiles](../2017-08-18---dockerize-ii-dockerfiles/)
@@ -46,8 +46,8 @@ Pages
 * Part Eight - Ansible - soon
 
 
-Tree
-----
+### Tree
+
 
 Lets start by having a look at the project structure.
 
@@ -103,8 +103,8 @@ Lets start by having a look at the project structure.
  
 At the top level of the repo we have the client container, the server container (clojure), and the proxy container. A scripts directory (bin) and a config directory for environment variables. Then we have our main docker-compose files, one for dev and one for production. Finally we have the Makefile, which we'll use to control the entire project
 
-Makefile
---------
+### Makefile
+
 
 Lets start with the Makefile
 
@@ -212,7 +212,8 @@ A straightforward file, with 3 services - or containers. Web, Clojure, and Nginx
 * links
 	* This is our reverse proxy. It links both our containers together, this means the front and back can access each other without needing to worry about CORS issues. It also means we don't need to handle CORS inside the Clojure app, nginx will do that for us. As this is our dev docker-compose we'll be using 3100 not 80 or 443.
 
-Up next!
+### Next
+
 
 In the next section we'll look at the Dockerfiles for each of the containers
 

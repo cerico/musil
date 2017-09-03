@@ -10,13 +10,15 @@ brief: Full Stack Docker Application Part 2 - Writing Dockerfiles for the Nginx,
 
 Let's now look at each of our Dockerfiles. Each of the Dockerfiles specifies an image to be used. In order to try and keep size low I've gone for Alpine based images where possible.
 
-TLDR / Repo
-----
+### TLDR / Repo
+
 
 Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
 
-Pages
-----
+___
+
+### Pages
+
 
 * [Part One - Intro](../2017-08-17---dockerize-i-intro/)
 * Part Two - Dockerfiles
@@ -27,6 +29,9 @@ Pages
 * [Part Seven - Connect Existing](../2017-08-23---dockerize-vii-connect-existing-machine/) 
 * Part Eight - Ansible - soon
 
+___
+
+### Start
 
 ```
 ➜  marsden git:(master) more client/Dockerfile.dev
@@ -74,7 +79,9 @@ CMD ["nginx", "-g", "daemon off;"]
 
 Finally the nginx container. We use nginx's image, copy in a number of files and launch nginx inside the container. 'daemon off' prevents the container from halting.
 
-Up next!
+___
+
+### Next
 
 
 In the next section we'll look at those files, and what's happening in the nginx container.

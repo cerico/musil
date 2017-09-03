@@ -10,13 +10,16 @@ brief: Full Stack Docker Application Part 5 - Building a Clojure container.
 
 I've never used Clojure before building this project. I wanted to have a simple API container that just returned a message and nothing else, and rather than use Rails or Node/Express it seemed a good opportunity to try something completely unknown. Both Clojure and Elixir were at the top of my list, and Clojure won out, thanks to a hard fought best of 5 coin toss.
 
-TLDR / Repo
-----
+___
+
+### TLDR / Repo
+
 
 Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
 
-Pages
-----
+___
+
+### Pages
 
 * [Part One - Intro](../2017-08-17---dockerize-i-intro/)
 * [Part Two - Dockerfiles](../2017-08-18---dockerize-ii-dockerfiles/)
@@ -26,6 +29,10 @@ Pages
 * [Part Six - Provisioning](../2017-08-21---dockerize-vi-provision-exoscale/ )
 * [Part Seven - Connect Existing](../2017-08-23---dockerize-vii-connect-existing-machine/) 
 * Part Eight - Ansible - soon
+
+___
+
+### Start 
 
 Let's start by reminding ourselves of our docker setup for clojure
 
@@ -104,7 +111,8 @@ Now we can look at the core file.
 
 run-jetty runs the say-hello function on port 3009, which returns a JSON message. Thats it! Again, we don't need to worry anything about CORS as nginx will make sure that requests from the client app appear to originate from the same domain or port.
 
-Next
----
+___
 
-Provisioning
+### Next
+
+[Part Six - Provisioning](../2017-08-21---dockerize-vi-provision-exoscale/ )

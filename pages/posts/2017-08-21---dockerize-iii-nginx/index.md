@@ -10,13 +10,17 @@ brief: Full Stack Docker Application Part 3 - Building an Nginx Container.
 
 The nginx/proxy container serves two purposes. Firstly it will handle requests from the web (port 80/443) and then send those requests to the appropiate container. But secondly it will handle requests *between* containers. In our case we'll have a client container that will need to make requests to the Clojure API container. As they are running on different ports we'll run into CORS errors (where requests from a different domain are automatically dropped). Rather than fiddle about trying to get CORS whitelisting happening within the server container, we can use the nginx container - a cleaner solution.
 
-TLDR / Repo
-----
+___
+
+### TLDR / Repo
+
 
 Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
 
-Pages
-----
+___
+
+### Pages
+
 
 * [Part One - Intro](../2017-08-17---dockerize-i-intro/)
 * [Part Two - Dockerfiles](../2017-08-18---dockerize-ii-dockerfiles/)
@@ -27,8 +31,10 @@ Pages
 * [Part Seven - Connect Existing](../2017-08-23---dockerize-vii-connect-existing-machine/) 
 * Part Eight - Ansible - soon
 
-Client
-------
+___
+
+### Client
+
 
 ```
 ➜  marsden git:(master) cat client/server.js
@@ -44,8 +50,10 @@ server.use(express.static(path.join(__dirname, './dist')));
 server.listen(process.env.PORT || 5000);
 ```
 
-Server
-------
+___
+
+### Server
+
 
 ```
 ➜  marsden git:(master) ✗ cat clojure/src/hidere/core.clj
@@ -67,8 +75,10 @@ Server
 
 We can see that our client app is running on port 5000 and our clojure app on port 3009. If we wanted to, we could also run them individually, bypassing nginx and docker altogether, which we'll look at in the next couple of posts.
 
-API Request
------------
+___
+
+### API Request
+
 
 ```
 ➜  marsden git:(master) ✗ cat client/src/js/index.js
@@ -82,8 +92,10 @@ API Request
 
 Truncated output here as we'll look at this in more detail later, all we really need to know right now is that the client app is going to make a request to the clojure API - and then it doesn't request this on a separate port. It doesn't even know about any other ports.
 
-nginx
------
+___
+
+### Nginx
+
 
 Let's look back at our nginx dockerfile
 
@@ -101,8 +113,10 @@ COPY index.html /usr/share/nginx/html
 
 We're going to copy 4 files into the container. Let's go through each of them.
 
-nginx.conf
-----
+___
+
+### nginx.conf
+
 
 ```
 ➜  marsden git:(master) ✗ cat proxy/nginx.conf
@@ -129,8 +143,10 @@ mars.conf     mars.dev.conf
 
 All files here are aggregated into the main nginx.conf file, so no duplication in these files is permitted.
 
-mars.dev.conf
-------
+___
+
+### Sites Enabled files
+
 
 ```
 ➜  marsden git:(master) cat proxy/sites-enabled/mars.conf
@@ -232,8 +248,10 @@ But here we can see that the client app isn't able to connect to the api /clojur
 
 ![no](https://s3.eu-west-2.amazonaws.com/io1937/ghpages/no.png)
 
-default.conf
------
+___
+
+### default.conf
+
 
 We're not using this file in development, so we'll come back to this when we push to production, but lets take a quick look
 
@@ -254,7 +272,10 @@ Here we will listen for any url not explicitly named in any of the sites-enabled
 ➜  marsden git:(master) ✗ cat proxy/index.html
 Mars!
 ```
-In the next post, we'll move on to the client container.
+
+### Next
+
+[Part Four - Client App](../2017-08-21---dockerize-iv-client-container/) 
 
 
 

@@ -37,7 +37,6 @@ ___
 
 ### Stage One - Initial Setup
 
-
 ```
 ➜  how-to-js-router git:(dev) tree
 .
@@ -423,7 +422,6 @@ Repo at stage 5:  [https://github.com/cerico/how-to-js-router/tree/0.5](https://
 ___
 
 ### Next
-
 
 In part II we'll look at updating the url, and handling refreshing and permanent links.
 

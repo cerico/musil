@@ -13,12 +13,16 @@ Linking to existing hosts with docker-machine was quite a faff, ultimately I'm n
 
 Let's go with Debian first, this is the basic Vagrantfile I originally used to set up my vm.
 
-TLDR / Repo
-----
+___
+
+### TLDR / Repo
+
 
 Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
 
-Pages
+___
+
+### Pages
 ----
 
 * [Part One - Intro](../2017-08-17---dockerize-i-intro/)
@@ -30,8 +34,10 @@ Pages
 * Part Seven - Connect Existing
 * Part Eight - Ansible - soon
 
-Host
----
+___
+
+### Host
+
 ```
 ➜  york cat Vagrantfile
 ```
@@ -44,8 +50,9 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-Guest
----
+___
+
+### Guest
 
 I'm connecting as the vagrant user, so we'll need to add the vagrant user to the docker group.
 
@@ -98,8 +105,10 @@ ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2376 -H unix:///var/run/doc
 
 docker now running inside vm - now to connect from docker-machine in our host
 
-Host
----
+___
+
+### Back to Host
+
 ```
 ➜  ~ docker-machine create --driver=generic --generic-ip-address 192.168.99.150 --generic-ssh-user=vagrant york
 ```
@@ -120,7 +129,7 @@ Docker is up and running!
 To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env york
 ```
 
-make sure your hosts public ssh key (~/.ssh/id_rsa.pub) is added to the vms authorized_keys file (/home/vagrant/.ssh/authorized_keys)
+Make sure your hosts public ssh key (~/.ssh/id_rsa.pub) is added to the vms authorized_keys file (/home/vagrant/.ssh/authorized_keys)
 
 and you should see the debian docker-machine available
 
@@ -159,7 +168,7 @@ eval $(docker-machine env -u)
 
 For now I'm just pushing the production environment. We can also later move the dev environment to using the vm's docker. Then we'll have moved all our docker hosts off OSX and onto remote docker machines, leaving OSX to function purely as a controller. 
 
-I've added a new file in sites-enabled, to cater for our local vm, keeping it separate from our production and dev files
+I've added a new file in sites-enabled, to cater for our local vm, keeping it separate from our production and dev files.
 
 ```
 ➜  marsden git:(recordcafe) cat proxy/sites-enabled/mars.york.conf
@@ -183,9 +192,9 @@ This will listen on the vms ip address, and also on mars.york - which we can set
 ➜  marsden git:(recordcafe) grep 150 /etc/hosts
 192.168.99.150 mars.york
 ```
+___
 
-Troubleshooting
----
+### Troubleshooting
 
 I did get this error...
 
@@ -216,10 +225,11 @@ Synchronizing state of nginx.service with SysV service script with /lib/systemd/
 Executing: /lib/systemd/systemd-sysv-install disable nginx
 ```
 
-Next up
----
+___
 
-Ansible!
+### Next
+
+Orchestration with Ansible.
 
 
 

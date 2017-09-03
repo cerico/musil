@@ -22,9 +22,8 @@ webpack
 
 0 directories, 4 files
 ```
-
-HTML
----
+___
+### HTML
 
 ```
 ➜  cooper git:(master) cat src/index.html
@@ -73,9 +72,9 @@ module.exports = options => {
 * devtool 'source-map' allows us to see which file and line logs and errors appear, rather than in their position in the bundled js file, easier for troubleshooting
 * devServer - We'll serve this build on port 2008, and have src/index.html as our fallback page. Single Page Applications need a root point, in case the user refreshes or tries to access a page directly, meanin the web server would bypass the index file and attempt to load a page that doesn't exist.
 
+___
 
-React
----
+### React
 
 ```
 ➜  cooper git:(master) cat webpack/webpack.react.config.js
@@ -206,7 +205,8 @@ module.exports = options => {
 
 Vue's webpack is a little more involved, we have an extra loader statement for .vue files, and we have the resolve alias section, which we'll look at in more detail when we come to view
 
-Next
----
+___
+
+### Next
 
 Next up we'll look at the source files for each version.

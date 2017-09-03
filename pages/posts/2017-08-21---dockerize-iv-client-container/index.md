@@ -12,13 +12,14 @@ brief: Full Stack Docker Application 4 - Building a client container for  Javasc
 
 We want our client and server containers to be as simple as possible. Our client container is very straightforward. It is only going to do two things, firstly display the message "I am from js", and secondly make a get request to the Clojure API and display the message it receives - which should be "and I'm from Clojure".
 
-TLDR / Repo
-----
+### TLDR / Repo
+
 
 Repository is here [https://github.com/institute1937/marsden](https://github.com/institute1937/marsden) 
 
-Pages
-----
+___
+
+### Pages
 
 * [Part One - Intro](../2017-08-17---dockerize-i-intro/)
 * [Part Two - Dockerfiles](../2017-08-18---dockerize-ii-dockerfiles/)
@@ -77,9 +78,10 @@ build:
 ```
 
 We'll run 'make start' when we want to run as normal, and 'make build' if we've made changes like installing new packages. When we run make build, npm install runs inside the client container, installing new packages. If we just run 'make start' then 'npm run dev' is run inside the client, as per the docker-compose.yml. Let's have a look at that.
+___
 
-npm run dev
------------
+### npm run dev
+
 
 ```
 ➜  marsden git:(master) cat client/package.json
@@ -96,9 +98,10 @@ npm run dev
 ```
 
 'npm run dev' runs the webpack-dev-server, its important to note the host specified as 0.0.0.0. Its not reachable via docker without specifying this address.
+___
 
-Webpack
-----
+### Webpack
+
 
 ```
 ➜  marsden git:(master) cat client/webpack.config.js
@@ -121,8 +124,9 @@ module.exports = options => {
 
 Webpack is out of the scope of this series, what we're mainly interested with here is the fact that its going to run the dev build on port 5000, which is where nginx will route client traffic to. Other than that webpacks job is to bundle our src js files into one bundle and then serve it on that port.
 
-Javascript
----
+___
+
+### Javascript
 
 All our JS in one index file with one function. Its job is to output two messages, one of its own and one it gets from the clojure API.
 
@@ -155,8 +159,10 @@ function addElement () {
 
 The addElement function runs when body is loaded. It creates one div, makes an API call and then creates a second div. The important thing to note here is that the API URL is our current url and the clojure directory. No reference to any other ports, we're decoupled.
 
-Production
----
+___
+
+### Production
+
 
 We're not ready to deploy yet, but let's look at how our production setup will work.
 
@@ -239,7 +245,9 @@ CMD ["node", "server.js"]
 
 Note the extra 'CMD' command not present in the dev dockerfile. 
 
+___
+
 Next
 ---
 
-Next up, we'll examine our Clojure API container
+[Part Five - Server App](../2017-08-21---dockerize-v-clojure-container/) 

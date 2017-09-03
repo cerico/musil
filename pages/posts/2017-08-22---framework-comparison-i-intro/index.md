@@ -12,8 +12,9 @@ The purpose of this series is two fold. The first is to get more of a handle on 
 
 And the other thing about that is, those node-modules folders get pretty big! Keeping everything all in the same project isn't just good for easy comparison, its good for my macbook as well!
 
-Tree
----
+___
+
+### Project Stucture
 
 Lets start with an overview of the project structure
 
@@ -43,8 +44,10 @@ Lets start with an overview of the project structure
     
 We're going to have 4 builds of the same project, react, vue, hyperapp - and vanilla JS. Each has its own webpack config and its own src directory, but they will all share the same index.html
 
-package.json
----
+___
+
+### package.json
+
 
 ```
 ➜  cooper git:(master) cat package.json
@@ -118,7 +121,9 @@ Fairly lean on the dependencies, as at this stage we're not looking to do very m
 
 I ran into problems quite early on with babel here, with hyperapp and react both seeming to want different babel configurations for 'transform-react-jsx' to work. So i've set up different envs for each, to tie up with the package.json scripts.
 
-Next up
+___
+
+### Next
 
 In part II, we'll start with the webpack configuration files.
 
