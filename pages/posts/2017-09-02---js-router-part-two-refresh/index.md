@@ -14,9 +14,7 @@ ___
 
 ### Pre-requisites.
 
-(part one link)(link)
-
-repo link(link)
+[Part One](../2017-08-26---javascript-router/)
 
 ___
 
@@ -44,15 +42,11 @@ export class Delph {
 }
 ```
 
-Here we are taking the HTML5 history thing and pusing our page into it
+Here we are taking the HTML5 history thing and into it we push our page object, page title (null), and page url.
 
-*page
-*null
-*url
+![alt text](https://dl.dropboxusercontent.com/s/imbm5wdf8xv7s5b/9CE60511-B1A8-4096-A439-25F2E48F5E9B-567-00000F28303615AF.gif?dl=0 'update url)
 
-image updating
-
-Repo stage 6
+Repo at stage 6: [https://github.com/cerico/how-to-js-router/releases/tag/0.6](https://github.com/cerico/how-to-js-router/releases/tag/0.6)
 ___
 
 ### Handling refresh and direct linking
@@ -103,7 +97,7 @@ export class Delph {
 
 We can pick up the page pathname string here, and pass to the load function when initiated. Our named pages will now work with direct links and with refreshes. But now the function runs on page load, how do we handle the index route. And what about handling 404s?
 
-repo here
+Repo at stage 7: [https://github.com/cerico/how-to-js-router/releases/tag/0.7](https://github.com/cerico/how-to-js-router/releases/tag/0.7)  
 ___
 
 ### Index Route
@@ -150,7 +144,7 @@ But as the text for the link for the default route is just an empty string, we h
     
 So in the case of an our named route being an empty string, we can just use 'index' for the text of the link, but still pass the load function the 'real' empty string, to tally up with the routes object.
 
-repo here
+Repo at stage 8: [https://github.com/cerico/how-to-js-router/releases/tag/0.8](https://github.com/cerico/how-to-js-router/releases/tag/0.8)
 ___
 
 ### 404
@@ -184,7 +178,7 @@ export class Delph {
 
 If we're unable to find a route in the routes object(due to mistyped link), we can simply attach an error message to the element
 
-repo 9 link
+Repo at stage 9: [https://github.com/cerico/how-to-js-router/releases/tag/0.9](https://github.com/cerico/how-to-js-router/releases/tag/0.9)
 ___
 
 ### The Back Button
@@ -222,7 +216,36 @@ If we remember from before, the URL updating and the content loading are unrelat
 
 We've written a new 'handleBackButton' function, and we initiate it when the router is initiated. window.onpopstate is part of the HTML5 API, which we can run in this function. When the back button is pressed, the event listener is triggered and we have access to the previous page's pathname. We can simply feed this to the load function, the same as if we were just clicking a link.
 
-repo 10
+However, if we use the back button consecutively, no changes are registered after the first press, because the load function is immediately updating the pushState again, so we want to disable that from happening. Lets pass the load function a second argument, true (for back button pressed. And then only update pushState when this isn't the case.
+
+```
+➜  how-to-js-router git:(master) cat -n src/js/delph.js
+     1	export class Delph {
+     2
+     3	  constructor(routes,el,page){
+     4	    this.routes = routes;
+     5	    this.el = el;
+     6	    this.load(page)
+     7	    this.handleBackButton()
+     8	  }
+     9
+    10	  handleBackButton(){
+    11	    window.onpopstate = () => {
+    12	      let content = "";
+    13	      if (event.state) {
+    14	        content = event.state.page;
+    15	        this.load(content, true)
+    16	      }
+    17	    }
+    18	  }
+    19
+    20	  load(page, backButtonUsed){
+    21	    if (!backButtonUsed){
+    22	      history.pushState({ page}, null, `/${page}`);
+    23	    }
+    ```
+
+Repo at stage 10: [https://github.com/cerico/how-to-js-router/releases/tag/0.10.1](https://github.com/cerico/how-to-js-router/releases/tag/0.10.1)
 
 ___
 
@@ -383,8 +406,11 @@ Caveat, as we're only maintaining one set of html files, and copying them from t
     ├── webpack.config.js
     └── webpack.prod.config.js
 ```
+```
+
 
 In both dev and prod, we want to make sure fetch is retrieving from the top level, so here's where we want to make sure there are no references to 'src'.
+
 
 ```
 ➜  how-to-js-router git:(kstephen) ✗ cat -n src/js/page.js
@@ -394,6 +420,8 @@ In both dev and prod, we want to make sure fetch is retrieving from the top leve
 ...
 ```
 
+
+Repo at stage 11: [https://github.com/cerico/how-to-js-router/releases/tag/0.11](https://github.com/cerico/how-to-js-router/releases/tag/0.11)
 ___
 
 ### Next
