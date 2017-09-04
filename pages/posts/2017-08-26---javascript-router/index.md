@@ -358,7 +358,7 @@ So whats happening here? We have three main parts to go through
 * load - the url that the html lives at. Once this is retrieved we'll attach store the returned html in 'this.html'.
 * show - This attaches the html to whatever element it is passed.
 
-Now lets updated the routes file to use the Page component.
+Now lets update the routes file to use the Page component.
 
 ```
 ➜  how-to-js-router git:(dev) ✗ cat src/js/routes.js
