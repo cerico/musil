@@ -55,6 +55,7 @@ const style = {
     listStyle: 'none',
     fontFamily: 'Raleway',
     fontSize: '4rem',
+    lineHeight:'1.18'
     // fontFamily: 'roboto'
   },
   date: {

@@ -21,7 +21,8 @@ const style = {
   date: {
     fontSize: rhythm(0.8),
     color: 'gray',
-    marginBottom: rhythm(0.1)
+    marginBottom: rhythm(0.1),
+    marginLeft: '0px'
   },
   h3: {
     marginBottom: rhythm(0.5),
@@ -42,12 +43,18 @@ const style = {
     display: 'inline-block'
   },
   headline: {
-    fontSize: '4rem',
+    fontSize: '3rem',
     lineHeight: '1',
     fontFamily: 'raleway',
     marginBottom:'15px'
+  },
+  altDate: {
+      fontSize:'1.05rem',
+      color:' rgb(158, 171, 179)',
+      // textAlign:'right',
+      marginLeft:'4%'
+    }
   }
-}
 
 class PostsList extends React.Component {
 
@@ -68,6 +75,8 @@ class PostsList extends React.Component {
           {pageTitle}
         </Link>
         <Summary body={page.data.brief} />
+   
+        
       </div>
     )
 

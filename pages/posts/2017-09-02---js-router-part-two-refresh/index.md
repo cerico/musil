@@ -42,9 +42,9 @@ export class Delph {
 }
 ```
 
-Here we are taking the HTML5 history thing and into it we push our page object, page title (null), and page url.
+Here we are taking the HTML5 history api and into it we push our page object, page title (null), and page url.
 
-![alt text](https://dl.dropboxusercontent.com/s/imbm5wdf8xv7s5b/9CE60511-B1A8-4096-A439-25F2E48F5E9B-567-00000F28303615AF.gif?dl=0 'update url)
+![alt text](https://dl.dropboxusercontent.com/s/imbm5wdf8xv7s5b/9CE60511-B1A8-4096-A439-25F2E48F5E9B-567-00000F28303615AF.gif?dl=0 'update url')
 
 Repo at stage 6: [https://github.com/cerico/how-to-js-router/releases/tag/0.6](https://github.com/cerico/how-to-js-router/releases/tag/0.6)
 ___

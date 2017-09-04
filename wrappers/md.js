@@ -21,7 +21,8 @@ class Wrapper extends React.Component {
       },
       pageTitle: {
         fontSize: '4rem',
-        marginBottom:'1rem'
+        marginBottom:'1rem',
+        marginTop: '2rem'
       },
       pageBody: {
       }

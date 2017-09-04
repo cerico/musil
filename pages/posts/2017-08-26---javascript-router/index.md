@@ -423,6 +423,9 @@ ___
 
 ### Next
 
-In part II we'll look at updating the url, and handling refreshing and permanent links.
+In part two we'll look at updating the url, and handling refreshing and permanent links.
+
+[Part Two](../2017-09-02---js-router-part-two-refresh/)
+
 
 
