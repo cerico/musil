@@ -243,11 +243,12 @@ However, if we use the back button consecutively, no changes are registered afte
     21	    if (!backButtonUsed){
     22	      history.pushState({ page}, null, `/${page}`);
     23	    }
-    ```
+```
+
 
 Repo at stage 10: [https://github.com/cerico/how-to-js-router/releases/tag/0.10.1](https://github.com/cerico/how-to-js-router/releases/tag/0.10.1)
 
-___
+__
 
 ### Using Express
 
@@ -256,7 +257,7 @@ So, our router works in the dev environment, but we don't want to use webpack in
 ```
 ➜  how-to-js-router git:(eleven-express) ✗ cat -n package.json
      ...
-     6	  "scripts": {
+      6	  "scripts": {
      7	    "dev": "webpack-dev-server --config webpack/webpack.config.js --open",
      8	    "build": "webpack --config webpack/webpack.prod.config.js",
      9	    "prod": "node server.js"
@@ -276,6 +277,7 @@ So, our router works in the dev environment, but we don't want to use webpack in
 
 Production webpack build is very similar to our existing one
 
+
 ```
 ➜  how-to-js-router git:(eleven-express) ✗ cat webpack/webpack.prod.config.js
 ```
@@ -293,7 +295,9 @@ module.exports = options => {
 } 
 ```
 
+
 We'll also need to temporaily copy our index.html file into dist, as thats what express is going to serve We need to use path to get an absolute location for the production bundle (in this case, our current directory, then one level up, then dist)
+
 
 ```
 ➜  how-to-js-router git:(eleven-express) ✗ cat server.js
@@ -331,11 +335,13 @@ server.use(staticFileMiddleware);
 server.listen(process.env.PORT || 5000);
 ```
 
-___
 
+
+___
 ### Handling static assets
 
 Our HTML files aren't being bundled, so we'll need to make sure they are accessible to the production build. So we can add a new npm script 'copy-files', which can run every time a build finishes.
+
 
 ```
 ➜  how-to-js-router git:(kstephen) ✗ cat -n package.json
@@ -368,8 +374,8 @@ dist
 1 directory, 7 files
 ```
 
-___
 
+___
 ### Gotchas - File Locations
 
 Caveat, as we're only maintaining one set of html files, and copying them from to dist as part of the build process, we have to make sure we remove any reference to 'src' in our js files. The views will be at the top level, which in dev with webpack will be the top level of the repo, but in production, 'dist' will be the top level, as thats where we are telling node to serve static assets from. This is best illustrated by tree.
@@ -406,8 +412,6 @@ Caveat, as we're only maintaining one set of html files, and copying them from t
     ├── webpack.config.js
     └── webpack.prod.config.js
 ```
-```
-
 
 In both dev and prod, we want to make sure fetch is retrieving from the top level, so here's where we want to make sure there are no references to 'src'.
 
