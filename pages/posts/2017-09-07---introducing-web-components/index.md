@@ -11,13 +11,14 @@ brief:
 
 This is intended as a part 3 of 'How to build a JS router' but can also work as a standalone guide. We can pick the repo up here, at stage 11, as a starting point.
 
-Repo at stage 11: [https://github.com/cerico/how-to-js-router/releases/tag/0.11](https://github.com/cerico/how-to-js-router/releases/tag/0.11)
+Repo at stage 11: [https://github.com/cerico/how-to-js-router/releases/tag/0.11.1](https://github.com/cerico/how-to-js-router/releases/tag/0.11.1)
 
 The problem we want to solve is that our html is living in html files, outside of our bundle and we're using Fetch to retrieve them. Our aim is to replace Fetch and get them inside the js bundle, and to do this we're going to use web components.
 
 ### Pre-requisites
 
 [Part One](../2017-08-26---javascript-router/)
+
 [Part Two](../2017-09-02---js-router-part-two-refresh/)
 
 Not really pre-requisites if we clone the repo above, but a guide to how we got to this point.
@@ -36,7 +37,7 @@ Not really pre-requisites if we clone the repo above, but a guide to how we got 
 ### 1. Install webcomponents
 
 ```
-➜  origami git:(master) cat package.json
+➜  how-to-js-router git:(master) cat package.json
 {
   "name": "how-to-js-router",
 ...
@@ -227,7 +228,7 @@ So this is great, we have a custom element but now we need to append it to the D
 
 The inject function receives the custom element, and appends it to the router element, which is the element we passed the router on instantiation.
 
-githublink
+Repo at stage 12: [https://github.com/cerico/how-to-js-router/releases/tag/0.12](https://github.com/cerico/how-to-js-router/releases/tag/0.12)
    
 ### 7. Import original views
 
@@ -277,7 +278,8 @@ export class GlossopComponent extends HTMLElement {
 
 And it will now be part of our bundle.
 
-github
+Repo at stage 13: [https://github.com/cerico/how-to-js-router/releases/tag/0.12](https://github.com/cerico/how-to-js-router/releases/tag/0.13)
+
 
 
 ### 8. Production
