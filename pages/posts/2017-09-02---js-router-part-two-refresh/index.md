@@ -426,7 +426,9 @@ ___
 
 ### Next
 
-In part 3 we'll include our static html in the compiled bundle, along with some images and css, and tidy things up.
+This is fine, but we can do better. We have our html files being retrieved by fetch, outside our man bundle. Wouldn't it be better if we included them as part of our bundle and bypassed fetch altogether. The answer is yes! Lets do that in part 3.
+
+
 
 
 

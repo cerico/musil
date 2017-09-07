@@ -6,6 +6,7 @@ tags:
  - Javascript
  - ES6
 brief: Building a client javascript router in vanilla es6 js, that handles refresh and deep linking and doesn't require hashbang URLs.
+image: 'http://blog.presentandcorrect.com/wp-content/uploads/2016/05/CiCKRqJWUAQdfv_-550x550.jpg'
 ---
 
 In this application we'll learn how to build a client-side router with vanilla Javascript. We have 3 main requirements
@@ -113,6 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
 This is our view before we add the router, we should be outputting the word text to screen, and nothing more.
  
 ![view](https://s3.amazonaws.com/how-to-js-router/how-to-js-router-one.png
+ "view")
+
+![view](./stamp.jpg
  "view")
 
 Repo at stage 1:  [https://github.com/cerico/how-to-js-router/tree/0.1](https://github.com/cerico/how-to-js-router/tree/0.1)
