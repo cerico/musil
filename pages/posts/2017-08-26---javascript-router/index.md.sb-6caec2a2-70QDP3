@@ -6,7 +6,7 @@ tags:
  - Javascript
  - ES6
 brief: Building a client javascript router in vanilla es6 js, that handles refresh and deep linking and doesn't require hashbang URLs.
-
+image: 'http://blog.presentandcorrect.com/wp-content/uploads/2016/05/CiCKRqJWUAQdfv_-550x550.jpg'
 ---
 
 In this application we'll learn how to build a client-side router with vanilla Javascript. We have 3 main requirements
