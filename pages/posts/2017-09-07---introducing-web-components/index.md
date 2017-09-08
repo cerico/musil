@@ -26,7 +26,7 @@ Not really pre-requisites if we clone the repo above, but a guide to how we got 
 ### Spoilers
 
 1. Install webcomponents
-2. Update dev webpack
+2.  Update dev webpack
 3. Create Component files
 4. Update routes object to use components
 5. Register the Components
@@ -284,7 +284,20 @@ Repo at stage 13: [https://github.com/cerico/how-to-js-router/releases/tag/0.12]
 
 ### 8. Production
 
-Thanks to our original setup, there isn't actually anything to change from the servers perspective. 
+Thanks to our original setup, there isn't actually anything to change from the servers perspective. But we can remove the need to be copying around view files from src to dev as they are now included in the bundle. We could also stretch this to the index.html file but I've left as is for now as I think think its somewhat clearer at a glance.
+
+```
+➜  how-to-js-router git:(master) cat -n package.json
+     1	{
+     ...
+     8	    "dev": "webpack-dev-server --config webpack/webpack.config.js --open",
+     9	    "build": "webpack --config webpack/webpack.prod.config.js && npm run copy-files",
+    10	    "copy-files": "cp src/index.html dist",
+    11	    "prod": "node server.js"
+    ...
+```
+
+    
 
 
 

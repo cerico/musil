@@ -292,6 +292,10 @@ p, ul, ol, dl {
   line-height: 1.6;
 }
 
+ol, ul {
+  margin-left:1.6rem !important;
+}
+
 header h1, header h3 {
   color:white
 }
