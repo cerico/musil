@@ -432,7 +432,7 @@ ___
 
 This is fine, but we can do better. We have our html files being retrieved by fetch, outside our man bundle. Wouldn't it be better if we included them as part of our bundle and bypassed fetch altogether. The answer is yes! Lets do that in part 3, with web components.
 
-[Part Three](../2017-09-07---introducing-web-components/)
+[Part Three](../2017-09-11---introducing-web-components/)
 
 
 
