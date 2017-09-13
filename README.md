@@ -2,6 +2,8 @@
 ---
 #### The plain and simple starter.
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cerico/musil.svg)](https://greenkeeper.io/)
+
 # Installation
 ---
 Install and run: 
