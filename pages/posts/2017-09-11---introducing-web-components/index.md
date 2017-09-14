@@ -15,7 +15,7 @@ Repo at stage 11: [https://github.com/cerico/how-to-js-router/releases/tag/0.11.
 
 The problem we want to solve is that our html is living in html files, outside of our bundle and we're using Fetch to retrieve them. Our aim is to replace Fetch and get them inside the js bundle, and to do this we're going to use web components.
 
-### Pre-requisites
+### Pre-requisites / Previous posts
 
 [Part One](../2017-08-26---javascript-router/)
 
@@ -25,11 +25,12 @@ Not really pre-requisites if we clone the repo above, but a guide to how we got 
 
 ### Spoilers
 
-1. Create Basic HTMLElement files
+1. Output content to page on click
 2. Update routes object to use components
 3. Inject Component into the DOM
 4. Add a function
-5. Next Steps
+5. Displaying State
+6. Next Steps
 
 
 ### 1. Create Basic HTMLElement files
@@ -41,11 +42,11 @@ export class DefaultComponent extends HTMLElement {
     connectedCallback() {
         console.log(DefaultComponent)
         console.log(HTMLElement)
-        this.innerHTML = this.render();
+        this.render();
     }
 
     render() {
-        return (`i am the homepage`)
+        this.innerHTML = `i am the homepage`
     }
 }
 
@@ -134,24 +135,58 @@ We can now append our component to the router element.
 ```
 ➜  how-to-js-router git:(fifteen-function) ✗ cat -n src/js/components/kendal.js
      1	export class KendalComponent extends HTMLElement {
-     2	    constructor() {
-     3	        super();
-     4	    }
-     5
-     6	    handleClick(){
-     7	        console.log("clicked")
-     8	    }
-     9
-    10	    connectedCallback() {
-    11	        this.innerHTML = this.render();
-    12	        this.addEventListener('click',this.handleClick)
-    13	    }
+     2
+     3	    handleClick(){
+     4	        console.log("clicked")
+     5	    }
+     6
+     7	    connectedCallback() {
+     8	        this.render();
+     9	        this.addEventListener('click',this.handleClick)
+    10	    }
 ```
 
 Here we add a function during the connectedCallback lifecycle method. At the moment our entire Kendal 'page' is one component, and the click event applies to the whole page. 
 
+### 5. Displaying State
+
+```
+➜  how-to-js-router git:(15.2) cat -n src/js/components/kendal.js
+     1	export class KendalComponent extends HTMLElement {
+     2
+     3	    handleClick(){
+     4	        console.log("clicked")
+     5	        this.state.clicked = "yes"
+     6	        this.render()
+     7	    }
+     8
+     9	    connectedCallback() {
+    10	        this.state = {}
+    11	        this.state.clicked = "no"
+    12	        this.render();
+    13	        this.addEventListener('click',this.handleClick)
+    14	    }
+    15
+    16	    render() {
+    17	        this.innerHTML = (
+    18	            `<div style="height:100px;background:orange">
+    19	                <span>clicked? ${this.state.clicked}</span>
+    20	            </div>`
+    21	        )
+    22	    }
+    23	}
+    24
+    25	customElements.define('kendal-component', KendalComponent);
+```
+
+We're now changing page content on click. Simply displaying whether the page has been clicked or not. We make a local stage object on connectedCallback, and give clicked an attribute of no. The handleClick function changes this to yes, and rerenders the component with the new value of yes.
+
 [https://github.com/cerico/how-to-js-router/tree/0.15.0](https://github.com/cerico/how-to-js-router/tree/0.15.0)
 
-### 5. Next Steps
+### 5. Next Steps / Issues
 
-In the next piece, we will look at state management, initially with Redux.
+![alt text](https://dl.dropboxusercontent.com/s/6ktat8t4q9vzyah/A85D07AC-B814-4351-A712-F6D0AD9FE907-574-0000322A62D2EF7C.gif?dl=0 "")
+
+Clicking the page turns the local state from clicked:no to clicked:yes. Great, but there is a problem. Changing pages. When we change from Kendal to Glossop and then back again, state is at clicked:no again. Our state change has been lost.
+
+In the next piece, we will look at state management, and how to fix this.
