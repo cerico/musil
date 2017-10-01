@@ -654,8 +654,11 @@ One thing you will have noticed, is our url isn't changing anymore, and our back
 We can add a 'back' to our route object, and if its not present we can push the page into the history object, and update the url. Now we need to re-add the back button functionality
 
 ```
-➜  how-to-js-router git:(31-back) ✗ cat -n src/js/delph.js
-   ...
+    // src/js/delph.js
+     1	import { loadRoute } from './actions'
+     2
+     3	export class Delph {
+     4
      5	  constructor(config){
    ...
     11	    this.handleBackButton(config.store)
@@ -671,6 +674,7 @@ We can add a 'back' to our route object, and if its not present we can push the 
     21	      }
     22	    }
     23	  }
+   ...
 ```
 
 We can pass the store to the handleBackButton function, and if the event state is present, we can pass that to the store's dispatch action, along with a back true to signify the back button was used.
