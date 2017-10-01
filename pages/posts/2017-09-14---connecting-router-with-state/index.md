@@ -37,7 +37,8 @@ We can pick the repo up at stage 20: [https://github.com/cerico/how-to-js-router
 10. Should Update?
 11. Unsubscribing
 12. Return of pushState and backbutton
-13. Next steps
+13. Build for production
+14. Next steps
 
 
 
@@ -676,7 +677,41 @@ We can pass the store to the handleBackButton function, and if the event state i
 
 Repo at stage 30: [https://github.com/cerico/how-to-js-router/tree/0.30.0](https://github.com/cerico/how-to-js-router/tree/0.30.0)
 
-### 13. Next steps
+### 13. Build for production
+
+We'll need to add to our production webpack config, for the babel loaders we used earlier
+
+```
+➜  how-to-js-router git:(master) cat webpack/webpack.prod.config.js
+const path = require('path')
+
+module.exports = options => {
+  return {
+    entry: './src/js/index.js',
+    output: {
+      path: path.join(__dirname, '../', '/dist'),
+      filename: 'bundle.js',
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          query: {
+            presets:[ 'stage-2' ]
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+
+Repo at stage 31: [https://github.com/cerico/how-to-js-router/tree/0.31.0](https://github.com/cerico/how-to-js-router/tree/0.31.0)
+
+### 14. Next steps
 
 In Part 6 we'll look at nested routes, and multiple hierarchical components per page
 
