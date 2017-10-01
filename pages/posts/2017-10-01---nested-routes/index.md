@@ -1,5 +1,5 @@
 ---
-title: Nested Routes
+title: Handling Nested Routes with vanilla JS router
 date: '2017-10-01'
 layout: post
 tags: 
