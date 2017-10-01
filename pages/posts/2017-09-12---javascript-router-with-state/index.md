@@ -233,6 +233,8 @@ The store is now the single point of truth for the counter. Which should mean, w
 
 ![](https://dl.dropboxusercontent.com/s/son7xslavj6sbuw/87F79E72-B232-4D87-9BFC-B05638CBB82C-574-00003FF119F42451.gif?dl=0 "")
 
+Repo at stage 20: [https://github.com/cerico/how-to-js-router/tree/0.20.0](https://github.com/cerico/how-to-js-router/tree/0.20.0)
+
 6. Next Steps
 
 Next we can expand the store to encompass different counters on different pages, and showing each pages counter in the nav bar. We will also link up the vanilla state with the vanilla router, and show a log of visited pages and keep track of the active route.
