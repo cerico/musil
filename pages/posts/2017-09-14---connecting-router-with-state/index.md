@@ -717,8 +717,7 @@ Repo at stage 31: [https://github.com/cerico/how-to-js-router/tree/0.31.0](https
 
 ### 14. Next steps
 
-In Part 6 we'll look at nested routes, and multiple hierarchical components per page
-
+In Part 6 we'll look at nested routes
 
 
 
