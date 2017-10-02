@@ -15,12 +15,12 @@ class Wrapper extends React.Component {
     const style = {
       date: {
         fontSize: '2rem',
-        color: 'red',
+        color: '#9EABB3',
         marginBottom: '1px',
         textAlign: 'center'
       },
       pageTitle: {
-        fontSize: '4rem',
+        fontSize: '2.2rem',
         marginBottom:'1rem',
         marginTop: '2rem'
       },

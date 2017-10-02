@@ -11,7 +11,7 @@ import Tags from './Tags'
 const style = {
   listItem: {
     margin: '0 auto',
-    width: '80%',
+    width: '100%',
     marginBottom: rhythm(1),
     listStyle: 'none'
   },
@@ -43,7 +43,7 @@ const style = {
     display: 'inline-block'
   },
   headline: {
-    fontSize: '3rem',
+    fontSize: '1.6rem',
     lineHeight: '1',
     fontFamily: 'raleway',
     marginBottom:'15px'

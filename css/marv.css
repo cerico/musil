@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 
@@ -19,7 +19,7 @@ body, html {
     padding: 0;
     text-decoration: none;
     text-rendering: optimizeLegibility;
-    list-style: none;
+    /* list-style: none; */
 }
 
 body {

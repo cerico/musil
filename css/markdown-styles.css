@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url("https://fonts.googleapis.com/css?family=Work+Sans");
+
 
 /*
 
@@ -105,7 +107,7 @@ Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 * {
-  font-family: "Fira Sans",sans-serif;
+  font-family: "Work Sans",sans-serif;
 }
 
 
@@ -124,7 +126,7 @@ h1, h2 {
 }
 
 .topper {
-  font-family: "PT Sans", sans-serif;
+  /* font-family: "PT Sans", sans-serif; */
     font-size: 64px;
     font-weight: 300;
     letter-spacing: -2px;
@@ -134,7 +136,7 @@ h1, h2 {
 
 
 .inverse-topper {
-  font-family: "PT Sans", sans-serif;
+  /* font-family: "PT Sans", sans-serif; */
     font-size: 64px;
     color:white;
     font-weight: 300;
@@ -153,12 +155,16 @@ a {
 }
 
 body {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 300;
   margin: 0;
-  background: #fff;
-  color: #3a3a3a;
+  /* background: #fff; */
+  color: #f8f8f8;
   margin-bottom: 9rem;
+}
+
+li a {
+  text-decoration:none
 }
 
 header[role="banner"] {
@@ -202,7 +208,7 @@ h1 {
   font-size: 5rem;
   margin: 0;
   color: cornflowerblue;
-  font-family: "Raleway", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
   font-weight: 100;
   color: cornflowerblue;
   text-rendering: optimizeLegibility;
@@ -212,7 +218,7 @@ h1 {
 h3{
   font-size: 2.7rem;
   color:#5f5c5c;
-  font-weight:"Fira Sans",sans-serif;
+  /* font-weight:"Fira Sans",sans-serif; */
   font-weight:300;
   line-height:1
 }
@@ -277,19 +283,18 @@ section {
 }
 
 p, ul, ol, dl {
-  margin: 1.6rem 0;
+  /* margin: 1.6rem 0; */
   font-size: 1.28rem;
   line-height: 1.6;
 }
 
 ol, ul {
-  margin-left:1.6rem !important;
+  /* margin-left:1.6rem !important; */
 }
 
 header h1, header h3 {
   color:white
 }
-
 .hero{
   padding:1rem 0 4rem;
   background-color: cornflowerblue;
@@ -319,7 +324,7 @@ header[role="hero"] {
 .h3, h3 {
   font-size: 21.328px;
   font-size: 1.333rem;
-  font-family: Antonio,Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif";
+  /* font-family: Antonio,Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif"; */
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: .5rem;
@@ -348,4 +353,35 @@ header[role="hero"] {
   font-size: 37.89749px;
   font-size: 2.36859rem;
   line-height: 3rem;
+}
+
+.intro {
+  padding-top: 2rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -.01em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+
+.wrapper {
+  width: 90%;
+  max-width: 60rem;
+  margin: auto;
+}
+
+.intro .leftside {
+  max-width: 10rem;
+  width: 5%;
+}
+
+.intro .text-col {
+  max-width: 39rem;
+  width: 60%;
+  margin-right: 18%;
 }
