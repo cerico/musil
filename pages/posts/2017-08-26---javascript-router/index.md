@@ -23,7 +23,7 @@ Npm and Node. These are the versions I'm running
 
 ```
 ➜  ~ node -v
-v7.7.2
+v8.6.0
 ➜  ~ npm -v
 5.3.0
 ```
