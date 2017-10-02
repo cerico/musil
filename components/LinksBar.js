@@ -25,8 +25,8 @@ class LinksBar extends React.Component {
 
   get navItems () {
     const navItems = [
-      ['Posts | ', '/'],
-      ['About | ', '/about/'],
+      ['Posts  ', '/'],
+      ['About  ', '/about/'],
     ]
 
     navItems.forEach((navItem) => {
@@ -40,7 +40,7 @@ class LinksBar extends React.Component {
     return (
       <div>
         <span>
-          {this.navItems.map((navItem, i) => <Link key={i} to={prefixLink(navItem[1])}>{navItem[0]}</Link>)}
+          {this.navItems.map((navItem, i) => <Link key={i} to={prefixLink(navItem[1])}>{navItem[0]}<br/></Link>)}
         </span>
         
         <a key={'contact'} href={'mailto:garethrobertlee@gmail.com?Subject=Hello'} target='blank_'>Contact</a>

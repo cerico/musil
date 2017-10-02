@@ -18,6 +18,9 @@ const style = {
     },
     p: {
       marginBottom: rhythm(0.2)
+    },
+    grl: {
+      display:'inline-block'
     }
   }
   
@@ -28,10 +31,10 @@ class authorBio extends React.Component {
       <Link to={prefixLink('/about/')}>
         <img src="https://s3.eu-west-2.amazonaws.com/io1937/ghpages/linkedin.jpg" alt={config.authorName} style={style.img} />
       </Link>
-      <span>
+      <div style={style.grl}>
         {config.authorBio}
         <Link to={prefixLink('/about/')}>{config.authorName}</Link>
-      </span>
+      </div>
     </p>
     )
   }

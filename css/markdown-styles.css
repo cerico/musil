@@ -377,11 +377,19 @@ header[role="hero"] {
 
 .intro .leftside {
   max-width: 10rem;
-  width: 5%;
+  width: 20%;
 }
 
 .intro .text-col {
   max-width: 39rem;
   width: 60%;
-  margin-right: 18%;
+  margin-right: 10%;
+}
+
+.cerico{
+  color: #eadfc1;
+}
+
+.headroom-wrapper{
+  border-top: 2px solid #eadfc1;
 }
