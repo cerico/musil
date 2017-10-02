@@ -116,9 +116,6 @@ This is our view before we add the router, we should be outputting the word text
 ![view](https://s3.amazonaws.com/how-to-js-router/how-to-js-router-one.png
  "view")
 
-![view](./stamp.jpg
- "view")
-
 Repo at stage 1:  [https://github.com/cerico/how-to-js-router/tree/0.1](https://github.com/cerico/how-to-js-router/tree/0.1)
 ___
 
