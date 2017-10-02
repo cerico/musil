@@ -11,8 +11,8 @@ const style = {
       marginTop: 0,
       marginBottom: 0,
       marginRight: rhythm(0.25),
-      width: rhythm(2),
-      height: rhythm(2),
+      width: rhythm(4),
+      height: rhythm(4),
       borderRadius: '50%',
       border: '1px gray solid'
     },
