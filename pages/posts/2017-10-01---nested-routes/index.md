@@ -13,7 +13,7 @@ In the last post we got our router working with our store but are only able to h
 
 We can pick the repo up at stage 31: [https://github.com/cerico/how-to-js-router/tree/0.31.0](https://github.com/cerico/how-to-js-router/tree/0.31.0)
 
-## Previously in 'How To JS Router'
+### Previously in 'How To JS Router'
 
 [Part One](../2017-08-26---javascript-router/)
 
@@ -62,7 +62,7 @@ Only one thing we need to here, just add one line to the index.html file
 </html>
 ```
 
-We need to add '<base href="/" />'. When we only had routes one level deep we didn't need this, as we were never traversing more than one level away from / anyway. Once we add a second level, eg glossop/new, the 'base' for the content becomes glossop, but that isn't where our content actually is.
+We need to add ```<base href="/" />```. When we only had routes one level deep we didn't need this, as we were never traversing more than one level away from / anyway. Once we add a second level, eg glossop/new, the 'base' for the content becomes glossop, but that isn't where our content actually is.
 
 ### 2. routes.js
 

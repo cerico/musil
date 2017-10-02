@@ -76,7 +76,7 @@ html {
 }
 
 .h1, .h2, h1, h2 {
-    font-family: Antonio,Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif";
+    /* font-family: Antonio,Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif"; */
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 1rem;

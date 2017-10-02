@@ -35,13 +35,9 @@ class Template extends React.Component {
       <LinksBar/>
             </div>
     <div className="text-col">
-      <p>
-        Marvin Visions is a more modern and consistent reinterpretation of <a target="_blank" href="https://fontsinuse.com/typefaces/10891/marvin-face">Marvin</a>, a typeface originally designed by Michael Chave in 1969 and published by <a target="_blank" href="http://luc.devroye.org/fonts-51663.html">Face Photosetting</a>. It has been revived by <a target="_blank" href="http://www.mathieutriay.com">Mathieu Triay</a> for the identity of <a target="_blank" href="https://www.readvisions.com">Visions</a>, a new science fiction magazine that aims to be a literary introduction to the genre, mixing classic texts with new writing.
-      </p>
+
       {children}
-      <p>
-        When everyone is looking for their next workhorse, here comes Marvin Visions – a typeface with character, made to stand out. Like the original, it’s uppercase only and solely for display use. Unlike the original, this new design wants to be more sturdy and versatile. It has tight-not-touching default spacing, and it sports diacritics for most European languages as well as Cyrillic glyphs. It has been enhanced with a number of symbols, including arrows and an ‘at sign’, on top of a completely redrawn figure set. You can see it in action throughout this page and in the <a href="#in-use">postcards below</a>.
-      </p>
+
     </div>
     </section>
     

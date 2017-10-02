@@ -217,7 +217,7 @@ h1 {
 
 h3{
   font-size: 2.7rem;
-  color:#5f5c5c;
+  color:#f07f23;
   /* font-weight:"Fira Sans",sans-serif; */
   font-weight:300;
   line-height:1
@@ -269,7 +269,7 @@ main, article {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 
 section {
@@ -343,7 +343,7 @@ header[role="hero"] {
 }
 
 .hero h1, .hero h2 {
-  font-family: Antonio,Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif";
+  /* font-family: Antonio,Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif"; */
   font-weight: 300;
   text-transform: uppercase;
   margin-bottom: 1rem;
