@@ -1,5 +1,5 @@
 import React from 'react'
-import 'css/markdown-styles.css'
+import 'css/marv.css'
 import Helmet from "react-helmet"
 import { config } from 'config'
 import { getPageDate } from '../utils/getPageDate'
@@ -15,7 +15,7 @@ class Wrapper extends React.Component {
     const style = {
       date: {
         fontSize: '2rem',
-        color: '#9EABB3',
+        color: 'red',
         marginBottom: '1px',
         textAlign: 'center'
       },

@@ -1,0 +1,190 @@
+body {
+    background-color: #fff;
+}
+
+
+body, html {
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+* {
+    border: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    list-style: none;
+}
+
+body {
+    display: block;
+    /* margin: 8px; */
+}
+
+html {
+    color: #000;
+    line-height: 1.5;
+    font-family: Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif";
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hero {
+    padding: 5rem 0 7rem;
+    background-color: #306ffd;
+    background-image: linear-gradient(60deg,#306efe,#003ab7);
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero h3 {
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.h3, .h4, h3, h4 {
+    line-height: 1.5rem;
+}
+
+.h3, h3 {
+    font-size: 21.328px;
+    font-size: 1.333rem;
+    font-family: Antonio,Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif";
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+
+.hero h3:after {
+    content: " ";
+    border-bottom: 3px solid #fff;
+    display: block;
+    width: 100%;
+    margin-top: .5rem;
+}
+
+.hero h1 {
+    margin: 0;
+}
+
+.h1, .h2, h1, h2 {
+    font-family: Antonio,Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif";
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.h1, h1 {
+    font-size: 37.89749px;
+    font-size: 2.36859rem;
+    line-height: 3rem;
+}
+
+.hero__div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin-bottom: -1px;
+}
+
+
+html {
+    color: #000;
+    line-height: 1.5;
+    font-family: Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif";
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+body,
+html {
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 18px
+}
+
+
+
+
+body {
+    background-color: #1e1e1e;
+    color: #f8f8f8;
+    font-family: Work Sans, sans-serif;
+    line-height: 1.45;
+    font-size: 1.25rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+    -webkit-font-feature-settings: "kern", "liga";
+    font-feature-settings: "kern", "liga";
+    -webkit-font-kerning: normal;
+    font-kerning: normal
+}
+body a {
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+    text-decoration: underline
+}
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 1.05rem
+    }
+}
+@media only screen and (max-width: 400px) {
+    body {
+        font-size: 1rem
+    }
+}
+.font-smoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.marvin .wrapper {
+    width: 90%;
+    max-width: 60rem;
+    margin: auto
+}
+
+
+
+
+
+.marvin .intro {
+    padding-top: 2rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -.01em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+.marvin .intro .text-col {
+    max-width: 39rem;
+    width: 60%;
+    margin-right:18%
+}
+
+.marvin .intro .leftside {
+    max-width:10rem;
+    width: 5%
+}
+.marvin .intro .text-col p {
+    padding-bottom: 1.25rem
+}
+

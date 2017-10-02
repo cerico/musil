@@ -299,3 +299,42 @@ ol, ul {
 header h1, header h3 {
   color:white
 }
+
+header[role="hero"] {
+  padding: 5rem 0 7rem;
+  background-color: #306ffd;
+  background-image: linear-gradient(60deg,#306efe,#003ab7);
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero h3 {
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.h3, .h4, h3, h4 {
+  line-height: 1.5rem;
+}
+
+.h3, h3 {
+  font-size: 21.328px;
+  font-size: 1.333rem;
+  font-family: Antonio,Open Sans,Helvetica Neue,Helvetica,Arial,"sans-serif";
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+.hero h3:after {
+  content: " ";
+  border-bottom: 3px solid #fff;
+  display: block;
+  width: 100%;
+  margin-top: .5rem;
+}
+
+.hero h1 {
+  margin: 0;
+}
