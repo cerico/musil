@@ -22,7 +22,7 @@ We can pick the repo up at stage 20: [https://github.com/cerico/how-to-js-router
 
 [Part Four](../2017-09-12---javascript-router-with-state/)
 
-### Spoilers
+### Contents
 
 1. Refactoring Index and Header Page
 2. Connect Router to Store Dispatch

@@ -28,7 +28,7 @@ Or we can just jump straight in here..
 
 [https://github.com/cerico/how-to-js-router/tree/0.15.1](https://github.com/cerico/how-to-js-router/tree/0.15.1)
 
-### Spoilers
+### Contents
 
 1. Introduce a page counter for one component
 2. Creating a store

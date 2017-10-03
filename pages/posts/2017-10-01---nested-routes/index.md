@@ -24,7 +24,7 @@ We can pick the repo up at stage 31: [https://github.com/cerico/how-to-js-router
 
 [Part Five](../2017-09-14---connecting-router-with-state/)
 
-### Spoilers
+### Contents
 
 1. index.html
 2. routes.js

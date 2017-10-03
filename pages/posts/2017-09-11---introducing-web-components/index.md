@@ -22,7 +22,7 @@ The problem we want to solve is that our html is living in html files, outside o
 
 Not really pre-requisites if we clone the repo above, but a guide to how we got to this point.
 
-### Spoilers
+### Contents
 
 1. Output content to page on click
 2. Update routes object to use components
