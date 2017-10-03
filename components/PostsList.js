@@ -12,7 +12,6 @@ class PostsList extends List {
     ).reverse()
 
     sortedPages.forEach((page) => {
-      console.log(page)
       if (access(page, 'file.ext') === 'md' && access(page, 'file.dir') !== 'about' && !include(page.path, '/404') ) {
         pageLinks.push(page)
       }

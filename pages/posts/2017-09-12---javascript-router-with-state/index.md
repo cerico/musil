@@ -5,8 +5,7 @@ layout: post
 tags: 
  - ES6
  - Javascript
-brief: 
- - Approaches to state management in an application with vanilla router and web components. (Js Router series part 4)
+brief: Approaches to state management in an application with vanilla router and web components. (Js Router series part 4)
 ---
 
 As we saw at the end of the previous piece, we can update content on the page with a click, but once we navigate to another page and back again our updated content is lost. 

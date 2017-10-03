@@ -46,13 +46,22 @@ const style = {
     fontSize: '1.6rem',
     lineHeight: '1',
     fontFamily: 'raleway',
-    marginBottom:'15px'
+    marginBottom:'15px',
+    fontFamily: '-apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif',
+    marginBottom: '15px',
+    color: '#607D8B',
+    fontWeight: '700'
   },
   altDate: {
       fontSize:'1.05rem',
       color:' rgb(158, 171, 179)',
       // textAlign:'right',
-      marginLeft:'4%'
+      marginLeft:'4%',
+      color:'yellow'
+    },
+    summary: {
+      color: '#4a4e53',
+      fontSize: '1.12rem'
     }
   }
 
@@ -69,12 +78,12 @@ class PostsList extends React.Component {
     
       <div>
         <div style={style.date}>
-          {getPageDate(page)}
+          {getPageDate(page)} in <Tags page={page.data}/>
         </div>
         <Link style={style.headline} to={prefixLink(page.path)}>
           {pageTitle}
         </Link>
-        <Summary body={page.data.brief} />
+        <Summary style={style.summary} body={page.data.brief} />
    
         
       </div>

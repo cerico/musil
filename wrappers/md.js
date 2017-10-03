@@ -1,5 +1,6 @@
 import React from 'react'
 import 'css/marv.css'
+import 'css/pal.css'
 import Helmet from "react-helmet"
 import { config } from 'config'
 import { getPageDate } from '../utils/getPageDate'
@@ -17,7 +18,9 @@ class Wrapper extends React.Component {
         fontSize: '2rem',
         color: '#9EABB3',
         marginBottom: '1px',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: '1rem',
+        textAlign: 'right'
       },
       pageTitle: {
         fontSize: '2.2rem',

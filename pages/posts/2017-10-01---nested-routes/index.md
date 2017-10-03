@@ -5,8 +5,7 @@ layout: post
 tags: 
  - ES6
  - Javascript
-brief: 
- - Refactoring JS router to handle nested routes (Js Router series part 6)
+brief: Refactoring JS router to handle nested routes (Js Router series part 6)
 ---
 
 In the last post we got our router working with our store but are only able to handle routes that are one level deep. In order to handle nested routes (eg /glossop/nested/5 we'll have to refactor our router. Thankfully this will be a much shorter post than the last one!

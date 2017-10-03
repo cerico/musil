@@ -46,10 +46,10 @@ const style = {
     display: 'inline-block'
   },
   tagLink: {
-    color:' rgb(158, 171, 179)',
-    fontFamily: '"Fira Sans",sans-serif',
-    fontSize: '2rem',
-    fontWeight:'200'
+    // color:' rgb(158, 171, 179)',
+    // fontFamily: '"Fira Sans",sans-serif',
+    // fontSize: '2rem',
+    // fontWeight:'200'
   },
   taggedPage: {
     listStyle: 'none',
@@ -59,10 +59,10 @@ const style = {
     // fontFamily: 'roboto'
   },
   date: {
-    fontSize:'1.05rem',
-    color:' rgb(158, 171, 179)',
-    textAlign:'right',
-    marginRight:'8%'
+    // fontSize:'1.05rem',
+    // color:' rgb(158, 171, 179)',
+    // textAlign:'right',
+    // marginRight:'8%'
   }
 }
 

@@ -1,5 +1,5 @@
 body {
-    /* background-color: #fff; */
+    background-color: #fff !important;
 }
 
 
@@ -36,19 +36,12 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.hero {
-    padding: 5rem 0 7rem;
-    background-color: #306ffd;
-    background-image: linear-gradient(60deg,#306efe,#003ab7);
-    text-align: center;
-    color: #fff;
-    position: relative;
-}
 
-.hero h3 {
+
+/* .hero h3 {
     display: inline-block;
     margin-bottom: 2rem;
-}
+} */
 
 .h3, .h4, h3, h4 {
     line-height: 1.5rem;
@@ -63,13 +56,7 @@ html {
     margin-bottom: .5rem;
 }
 
-.hero h3:after {
-    content: " ";
-    border-bottom: 3px solid #fff;
-    display: block;
-    width: 100%;
-    margin-top: .5rem;
-}
+
 
 .hero h1 {
     margin: 0;
@@ -121,7 +108,7 @@ html {
 
 body {
     background-color: #1e1e1e;
-    color: #f8f8f8;
+    /* color: #f8f; */
     font-family: Work Sans, sans-serif;
     line-height: 1.45;
     font-size: 1.25rem;
@@ -185,6 +172,7 @@ body a {
     width: 5%
 }
 .marvin .intro .text-col p {
-    padding-bottom: 1.25rem
+    padding-bottom: 1.25rem;
+    color:'#1e1e1e'
 }
 

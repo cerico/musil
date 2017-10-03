@@ -13,15 +13,19 @@ const style = {
     width: rhythm(2),
     height: rhythm(2),
     borderRadius: '50%',
-    border: '1px gray solid'
+    border: '3px solid #7e9aa3'
   },
   p: {
     marginBottom: rhythm(1)
+  },
+  sidelink: {
+    color:'#7e9aa3'
   }
 }
 
 class LinksBar extends React.Component {
   // const LinksBarParts = config.authorBio.split(config.authorName)
+
 
   get navItems () {
     const navItems = [
@@ -40,10 +44,10 @@ class LinksBar extends React.Component {
     return (
       <div>
         <span>
-          {this.navItems.map((navItem, i) => <Link key={i} to={prefixLink(navItem[1])}>{navItem[0]}<br/></Link>)}
+          {this.navItems.map((navItem, i) => <Link style={style.sidelink} key={i} to={prefixLink(navItem[1])}>{navItem[0]}<br/></Link>)}
         </span>
         
-        <a key={'contact'} href={'mailto:garethrobertlee@gmail.com?Subject=Hello'} target='blank_'>Contact</a>
+        <a style={style.sidelink} key={'contact'} href={'mailto:garethrobertlee@gmail.com?Subject=Hello'} target='blank_'>Contact</a>
     </div>
     )
   }

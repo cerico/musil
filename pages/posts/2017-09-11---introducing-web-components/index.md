@@ -5,8 +5,7 @@ layout: post
 tags: 
  - ES6
  - Javascript
-brief: 
- - Replacing fetch and static html with web components in the existing router project.
+brief: Replacing fetch and static html with web components in the existing router project.
 ---
 
 This is intended as a part 3 of 'How to build a JS router' but can also work as a standalone guide. We can pick the repo up here, at stage 11, as a starting point.

@@ -7,13 +7,15 @@ const Comma = props =>  (props.i < props.length-1) ? (
   <span>,</span>
 ) : <span></span>
 
+// const Tags = props => (props.page) ? <span>yes</span> : null
+
 const Tags = props => (props.page && props.page.tags || []).length
   ? (
     
       <span style={{display:'inline'}}>
         {props.page.tags.map((tag, i) => (
           <span key={i} style={{marginRight:'8px',lineHeight:'1.5'}}>
-            <Link style={{color:'rgb(158, 171, 179)',display:'inline-block'}} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}>
+            <Link style={{color:'rgb(158, 171, 179)',display:'inline-block',color:'#e74769',fontSize:'1rem'}} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}>
               {tag}
             
             </Link>

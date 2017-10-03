@@ -5,8 +5,7 @@ layout: post
 tags: 
  - ES6
  - Javascript
-brief: 
- - Connecting a vanilla JS router with a redux-style vanilla JS store. (Js Router series part 5)
+brief: Connecting a vanilla JS router with a redux-style vanilla JS store. (Js Router series part 5)
 ---
 
 In the last post we moved local state to a store object, and were able to move from page to page without losing our pages state (a simple counter). But this gives us other things to think about. Perhaps we'd like to show which link is active, or do other things based on which view we're on. Our router and our store are independent of each other, so now we'll look at how to link them.
