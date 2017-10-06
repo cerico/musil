@@ -32,3 +32,72 @@ body {
     font-weight: bold;
     color: #494e52
 }
+
+@media (min-width: 660px){
+
+.schedule #schedule-times .schedule-item {
+    max-width: 680px;
+    margin: 0 auto;
+    min-height: 200px;
+    padding-left: 180px;
+    position: relative;
+    padding-top: 0;
+    border: 0;
+}
+
+.schedule #schedule-times .schedule-item {
+    text-align: left;
+    border-top: 3px solid #fff2de;
+    padding-top: 20px;
+}
+
+
+
+
+
+ .schedule-item {
+    max-width: 680px;
+    margin: 0 auto;
+    /* min-height: 200px; */
+    padding-left: 181px;
+    position: relative;
+    padding-top: 0;
+    border: 0;
+}
+
+ .schedule-item {
+    text-align: left;
+    border-top: 3px solid #b1d8e4;
+    padding-top: 20px;
+}
+
+.skew{
+    font-size:1.6rem
+}
+
+schedule-item h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.25em;
+    font-family: 'Work Sans';
+    font-weight:400
+}
+
+
+
+.timeskew {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.8em;
+    margin: 0;
+    width: 150px;
+    text-align: center;
+    font-size: 1.32rem;
+    color: gray;
+    margin-bottom: 0.165rem;
+    margin-left: 0px;
+    padding-top:60px;
+    text-align:right
+}
+
+}

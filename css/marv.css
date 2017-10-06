@@ -8,6 +8,46 @@ body, html {
     min-width: 100%; */
 }
 
+@media (min-width: 660px){
+    .mini{
+        display:none
+    }
+   
+}
+
+
+@media (max-width: 660px){
+    
+        .leftside{
+            display:none
+        }
+        .intro .text-col{
+            width:90% !important;
+            max-width:none !important;
+            margin-left:5% !important
+        }
+        .mini {
+            width:90%;
+            margin-left:5% !important;
+            display:inline-block !important;
+            margin-top:-34px
+        }
+        .mini a {
+            padding-bottom: 1.25rem;
+            color:'#1e1e1e';
+            /* color:red !important; */
+            display:inline-block;
+        }
+        .mini p {
+            display:inline-block !important;
+            float:left
+        }
+        .mini .linx {
+            display: inline-block !important;
+            margin-top:20px
+        }
+    }
+
 * {
     border: 0;
     -webkit-box-sizing: border-box;

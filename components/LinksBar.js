@@ -42,7 +42,7 @@ class LinksBar extends React.Component {
 
   get nav () {
     return (
-      <div>
+      <div className="linx">
         <span>
           {this.navItems.map((navItem, i) => <Link style={style.sidelink} key={i} to={prefixLink(navItem[1])}>{navItem[0]}<br/></Link>)}
         </span>
@@ -54,7 +54,7 @@ class LinksBar extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className="linx">
        
         {this.nav}
       </div>
