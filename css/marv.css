@@ -183,7 +183,7 @@ body a {
 }
 .marvin .wrapper {
     width: 90%;
-    max-width: 60rem;
+    max-width: 78rem;
     margin: auto
 }
 
@@ -204,8 +204,8 @@ body a {
     justify-content: space-between
 }
 .marvin .intro .text-col {
-    max-width: 39rem;
-    width: 60%;
+    max-width: 52rem;
+    width: 80%;
     margin-right:18%
 }
 
