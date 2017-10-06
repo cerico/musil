@@ -30,7 +30,9 @@ body, html {
             width:90%;
             margin-left:5% !important;
             display:inline-block !important;
-            margin-top:-34px
+            margin-bottom:-54px;
+            /* margin-top:-54px; */
+            z-index:900
         }
         .mini a {
             padding-bottom: 1.25rem;
@@ -39,7 +41,7 @@ body, html {
             display:inline-block;
         }
         .mini p {
-            display:inline-block !important;
+            /* display:inline-block !important; */
             float:left
         }
         .mini .linx {

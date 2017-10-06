@@ -50,12 +50,15 @@ const style = {
     // fontFamily: '"Fira Sans",sans-serif',
     // fontSize: '2rem',
     // fontWeight:'200'
+    textTransform: 'none'
   },
   taggedPage: {
     listStyle: 'none',
-    fontFamily: 'Raleway',
-    fontSize: '4rem',
-    lineHeight:'1.18'
+    // fontFamily: 'Raleway',
+    // fontSize: '4rem',
+    lineHeight:'1.18',
+    marginBottom:'1.165rem',
+    textTransform: 'uppercase'
     // fontFamily: 'roboto'
   },
   date: {
@@ -75,12 +78,12 @@ class PostsIndex extends React.Component {
     
 
     const TaggedPage = ({ page }) => (
-      <li style={style.taggedPage}>
+      <li className="schedule-item" style={style.taggedPage}>
         <Link style={style.taggedPage} to={prefixLink(page.path)}>
           {page.data.title}
         </Link>
         {<Summary style={style.tagLink} body={page.data.brief} />}
-        <div style={style.date}>
+        <div style={style.date} className="timeskew">
         {getPageDate(page)}
       </div>
       </li>

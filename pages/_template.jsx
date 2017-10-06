@@ -51,30 +51,10 @@ class Template extends React.Component {
           </div>
           
           <div className="text-col">
+      
           <section id="schedule-times">
-          <div className="schedule-item">
-          <div className="timeskew"> 1 Oct 2017 in <span><span><a href="/tags/#es6" >ES6</a><span>,</span></span><span><a href="/tags/#javascript">Javascript</a><span></span></span></span></div>
-          
-          <h2 className="skew">  Handling Nested Routes with vanilla JS router</h2>
-         
-          <p>
-          Refactoring JS router to handle nested routes (Js Router series part 6)
-          </p>
-       <div className="clear-both"></div>
-        </div>
-          <div className="schedule-item">
-        <h2 className="skew">10:30am</h2>
-        <div className="clear-both"></div>
-        <p>Wipe the sleep out of your eyes, grab a coffee, check out the activities we've planned and then find a seat. There will be refreshments available to buy at the venue.</p>
-      </div>
-          <div className="schedule-item">
-        <h2 className="skew">10:30am</h2>
-        <div className="clear-both"></div>
-        <p>A few words from Ben Steers and your host for the day, Intern Magazine’s Alec Dudson</p>
-      </div>
-        
+          {children}
           </section>
-           
           </div>
         </section>
       </div>

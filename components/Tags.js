@@ -14,8 +14,8 @@ const Tags = props => (props.page && props.page.tags || []).length
     
       <span style={{display:'inline'}}>
         {props.page.tags.map((tag, i) => (
-          <span key={i} style={{marginRight:'8px',lineHeight:'1.5'}}>
-            <Link style={{color:'rgb(158, 171, 179)',display:'inline-block',color:'#e74769',fontSize:'1rem'}} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}>
+          <span key={i} style={{marginRight:'8px',lineHeight:'1.2',display:'inline-block'}}>
+            <Link style={{color:'rgb(158, 171, 179)',display:'inline-block',color:'#7e9aa3',fontSize:'1rem'}} to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(tag)}` }}>
               {tag}
             
             </Link>

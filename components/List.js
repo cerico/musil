@@ -19,7 +19,7 @@ const style = {
     marginLeft: 0
   },
   date: {
-    fontSize: rhythm(0.8),
+    // fontSize: rhythm(0.8),
     color: 'gray',
     marginBottom: rhythm(0.1),
     marginLeft: '0px'
@@ -50,7 +50,12 @@ const style = {
     fontFamily: '-apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif',
     marginBottom: '15px',
     color: '#607D8B',
-    fontWeight: '700'
+    fontWeight: '700',
+    color:'#4a4e53',
+    textTransform: 'uppercase',
+    color:'#FF7980',
+    // textDecoration:'underline',
+    color:'#7fa2c5'
   },
   altDate: {
       fontSize:'1.05rem',
@@ -77,7 +82,7 @@ class PostsList extends React.Component {
 
     
       <div>
-        <div style={style.date}>
+        <div style={style.date} className="timeskew">
           {getPageDate(page)} in <Tags page={page.data}/>
         </div>
         <Link style={style.headline} to={prefixLink(page.path)}>
@@ -103,7 +108,7 @@ class PostsList extends React.Component {
     }
 
     return (
-      <li key={page.path} style={style.listItem}>
+      <li className="schedule-item" key={page.path} style={style.listItem}>
         {listItemContents}
       </li>
     )
