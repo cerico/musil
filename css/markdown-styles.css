@@ -404,7 +404,10 @@ h1:after{
 }
 
 .authorbio{
-  color:#7e9aa3
+  color:#7e9aa3;
+  color:rgb(138,177,214);
+  color:#707274;
+  font-weight:800
 }
 .headroom-wrapper{
   border-top: 2px solid #eadfc1;
@@ -419,5 +422,6 @@ h1:after{
 
 .page-content a {
   color:#FF7980;
+  color:#d2f0dc;
   text-decoration:underline
 }

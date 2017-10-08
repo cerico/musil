@@ -20,7 +20,8 @@ class Wrapper extends React.Component {
         marginBottom: '1px',
         textAlign: 'center',
         fontSize: '1rem',
-        textAlign: 'right'
+        textAlign: 'right',
+        color:'#d2f0dc'
       },
       pageTitle: {
         fontSize: '2.2rem',

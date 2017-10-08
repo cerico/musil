@@ -19,7 +19,10 @@ const style = {
     marginBottom: rhythm(1)
   },
   sidelink: {
-    color:'#7e9aa3'
+    color:'#7e9aa3',
+    color:'#8ab1d6',
+    color:'#707274',
+    fontWeight:'800'
   }
 }
 

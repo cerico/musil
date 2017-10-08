@@ -116,6 +116,7 @@ schedule-item h2 {
 
 .site-main {
     width: 100%;
+    margin-bottom:36px
 }
 
 @media screen and (min-width: 768px){
@@ -249,7 +250,8 @@ schedule-item h2 {
     background: #96d4e2;
     background:#9fcae3;
     margin: 0 !important;
-    max-width:none !important
+    max-width:none !important;
+    /* background:#747eaf */
 }
 
 @media screen and (min-width: 768px)
@@ -331,7 +333,7 @@ schedule-item h2 {
 }
 
 .article-title  {
-    color:#1e1e1e !important
+    color:#4a4e53  !important
 }
 
 .article-date{
