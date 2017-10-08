@@ -48,6 +48,9 @@ body, html {
             display: inline-block !important;
             margin-top:20px
         }
+        .content-left {
+            display:none
+        }
     }
 
 * {

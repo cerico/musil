@@ -71,7 +71,7 @@ body {
     max-width: 680px;
     margin: 0 auto;
     /* min-height: 200px; */
-    padding-left: 181px;
+    /* padding-left: 181px; */
     position: relative;
     padding-top: 0;
     border: 0;
@@ -79,8 +79,8 @@ body {
 
  .schedule-item {
     text-align: left;
-    border-top: 3px solid #b1d8e4;
-    padding-top: 20px;
+    border-bottom: 2px dotted #1e1e1e;
+    padding-bottom: 20px;
 }
 
 .skew{
@@ -247,6 +247,7 @@ schedule-item h2 {
     width: 100%;
     position: relative;
     background: #96d4e2;
+    background:#9fcae3;
     margin: 0 !important;
     max-width:none !important
 }
@@ -329,7 +330,7 @@ schedule-item h2 {
     color:#fff !important
 }
 
-.article-title a {
+.article-title  {
     color:#1e1e1e !important
 }
 

@@ -4,6 +4,7 @@ import { prefixLink } from 'gatsby-helpers'
 import { rhythm } from '../utils/typography'
 import { getPageDate } from '../utils/getPageDate'
 import access from 'safe-access'
+import css from '../css/pal.css'
 
 import Summary from './Summary'
 import Tags from './Tags'
@@ -67,6 +68,9 @@ const style = {
     summary: {
       color: '#4a4e53',
       fontSize: '1.12rem'
+    },
+    articleTitle: {
+
     }
   }
 
@@ -80,18 +84,33 @@ class PostsList extends React.Component {
 
     let listItemContents = (
 
-    
-      <div>
-        <div style={style.date} className="timeskew">
-          {getPageDate(page)} in <Tags page={page.data}/>
-        </div>
-        <Link style={style.headline} to={prefixLink(page.path)}>
-          {pageTitle}
-        </Link>
-        <Summary style={style.summary} body={page.data.brief} />
+      <article className="event bigclicky" data-url="http://plantchicago.org/events/open-house-chicago-pop-market-2/" data-lat="41.8107409" data-lng="-87.6606389" data-title="Open House Chicago Pop-up Market" data-desc="Oct 15, 2017 @ 10:00am–4:00pm" data-id="909">
+      <div className="article-content">
+      <time className="article-date" datetime="2017-10-15T10:00:00+00:00">
+      <span className="-inner">  
+      <span>{getPageDate(page)}  </span>  
+
+      </span>
+      </time>
+      <div className="article-content-wrap"> 
+         <Link className="article-title" to={prefixLink(page.path)}>
+           {pageTitle}
+         </Link>
+         <Summary className="event-summary" body={page.data.brief} />
+     </div>
+      </div>
+      </article>
+      // <div>
+      //   <div style={style.date} className="timeskew">
+      //     {getPageDate(page)} in <Tags page={page.data}/>
+      //   </div>
+      //   <Link style={style.headline} to={prefixLink(page.path)}>
+      //     {pageTitle}
+      //   </Link>
+      //   <Summary style={style.summary} body={page.data.brief} />
    
         
-      </div>
+      // </div>
     )
 
     if (image) {
@@ -154,7 +173,7 @@ class PostsList extends React.Component {
     }
 
     return (
-      <div className="content">
+      <div className="contentu">
         {this.title}
         <ul style={style.list}>
           {list}
