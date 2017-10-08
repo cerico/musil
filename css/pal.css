@@ -21,6 +21,15 @@ body {
     margin-bottom: -1px;
 }
 
+.hero__divu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin-bottom: -1px;
+}
+
 .hero h3 {
     /* font-size: 1em; */
 }
