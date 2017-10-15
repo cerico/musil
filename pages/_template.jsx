@@ -24,14 +24,56 @@ class Template extends React.Component {
   heart()
   {
     var e = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    e.setAttribute("class","icon");
-    
+    e.setAttribute("width","100%");
+    e.setAttribute("height","47px");
+    e.setAttribute("viewbox","0 0 1440 47");
+    e.setAttribute("class","hero__div")
+    e.setAttribute("xmlns","http://www.w3.org/2000/svg" )
+    e.setAttribute("version","1.1" )
+    var op = document.getElementById('blueboy')
     var s = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    s.setAttribute("d","M0,15 a15,15 0 0,1 30,0 l-15,15 l-15,-15");
-    s.setAttribute("fill","red");
-    
-    e.appendChild(s);
+    s.setAttribute("d","M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z");
+    // s.setAttribute("fill","url('http://www.visitoruk.com/images/franchises/Huddersfield/gallery/largegallery_6182.jpg')");
+    // debugger
+    var defs = document.createElementNS ('xmlns', "defs");
+    var pattern = document.createElementNS ('xmlns', "pattern");
+    var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    pattern.setAttribute('id','img2')
+    pattern.setAttribute('patternUnits','userSpaceOnUse')
+    pattern.setAttribute('width','100')
+    pattern.setAttribute('height','100')
+    var image = document.createElementNS ('xmlns', "image");
+    image.setAttribute('xlink:href',"http://www.visitoruk.com/images/franchises/Huddersfield/gallery/largegallery_6182.jpg")
+    image.setAttribute('width','100')
+    image.setAttribute('height','100')
+    image.setAttribute('x','0')
+    image.setAttribute('y','0')
+    pattern.appendChild(image)
+    defs.appendChild(pattern)
+    e.appendChild(defs)
+    g.appendChild(s);
+    e.appendChild(g);
+    s.setAttributeNS(null,'fill','url(#img1)')
     return e;
+  }
+
+  swirl(){
+    // debugger
+    var op = document.getElementById('blueboy')
+    
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+    return (
+      <svg width="100%" height="47px" viewBox="0 0 1440 47" version="1.1" xmlns="http://www.w3.org/2000/svg" className="hero__div" preserveAspectRatio="none">
+      <defs data-reactid="15">
+    <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+    <image xlinkHref="http://www.visitoruk.com/images/franchises/Huddersfield/gallery/largegallery_6182.jpg" x="0" y="0" width="100" height="100" />
+  </pattern>
+      </defs>
+      <g  id="Page-1" stroke="none" strokeWidth="1"  data-reactid="16">
+      <path d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z"  id="Path-9" data-reactid="17"></path></g>
+      </svg>
+    )
   }
 
   componentDidMount(){
@@ -51,40 +93,10 @@ class Template extends React.Component {
      var add = this.heart()
      u.appendChild(add)
    
-     this.swirl()
+    //  this.swirl()
 
     }
 
-    bah(){
-      
-    }
-
-    swirl(){
-      // debugger
-      var op = document.getElementById('blueboy')
-      
-      var svg = document.createElementNS("http://www.w3.org/2000/svg", "path");
-
-      return (
-        <svg width="100%" height="47px" viewBox="0 0 1440 47" version="1.1" xmlns="http://www.w3.org/2000/svg" className="hero__div" preserveAspectRatio="none">
-        <defs data-reactid="15">
-        <filter id="dropshadow">
-        <feGaussianBlur in="SourceAlpha" result="blurOut" stdDeviation="4"/>
-        <feOffset in="blurOut" result="dropBlur" dx="5" dy="5"/>
-        <feComposite operator="over" in="SourceGraphic" in2="dropBlur" result="final"/>
-        </filter>
-        <linearGradient id="Gradient01">
-        <stop offset="20%" stopColor="#39F" />
-        <stop offset="90%" stopColor="#F3F" />
-      </linearGradient>
-      <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
-      <image xlinkHref="http://www.visitoruk.com/images/franchises/Huddersfield/gallery/largegallery_6182.jpg" x="0" y="0" width="100" height="100" />
-    </pattern>
-        </defs>
-        <g  id="Page-1" stroke="none" strokeWidth="1"  data-reactid="16"><path d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z"  id="Path-9" data-reactid="17"></path></g>
-        </svg>
-      )
-    }
 
     updateSVG() {
 
@@ -155,8 +167,10 @@ class Template extends React.Component {
           <Link  to="/" className="inverse-topper">Cerico</Link>
           <h3>Javascript, Docker, Elixir, Nginx, and other fun and games</h3>
           </div>
-      
-         <div id="add-swirl"></div>
+   
+         <div id="add-swirl">
+        
+        </div>
         </div>
     
 
