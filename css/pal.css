@@ -129,8 +129,11 @@ schedule-item h2 {
 }
 
 .active-person-container .person-data, .grid {
-    display: flex !important;
+    /* display: flex !important; */
+    display:block
 }
+
+
 
 .site-grid {
     width: 100%;
@@ -173,6 +176,12 @@ schedule-item h2 {
 
 .active-person-container .person-data, .grid {
     display: block;
+}
+
+@media screen and (min-width: 768px){
+    .active-person-container .person-data, .grid {
+        display: flex;
+    }
 }
 @media screen and (min-width: 768px)
 {

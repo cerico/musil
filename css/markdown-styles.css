@@ -414,10 +414,24 @@ h1:after{
 }
 
 
-  @media (max-width: 660px){
+  @media (max-width: 768px){
     .authorbio{
       display:none
   }
+
+}
+
+@media only screen and (orientation:portrait){
+  .authorbio{
+    display:none
+}
+}
+
+@media (max-width: 768px){
+
+.page-content{
+ /* margin-left:50% */
+}
 }
 
 .page-content a {

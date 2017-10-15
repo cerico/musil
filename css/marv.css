@@ -8,15 +8,20 @@ body, html {
     min-width: 100%; */
 }
 
-@media (min-width: 660px){
+@media (min-width: 768px){
     .mini{
         display:none
     }
    
 }
 
+@media  screen  and (orientation:portrait){
+.site-main .content-right {
+    max-width: 95% !important
+};
+}
 
-@media (max-width: 660px){
+@media  screen  and (orientation:portrait), screen and (max-width: 768px){
     
         .leftside{
             display:none

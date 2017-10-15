@@ -86,7 +86,7 @@ class PostsList extends React.Component {
 
       <article className="event bigclicky" data-url="http://plantchicago.org/events/open-house-chicago-pop-market-2/" data-lat="41.8107409" data-lng="-87.6606389" data-title="Open House Chicago Pop-up Market" data-desc="Oct 15, 2017 @ 10:00am–4:00pm" data-id="909">
       <div className="article-content">
-      <time className="article-date" datetime="2017-10-15T10:00:00+00:00">
+      <time className="article-date">
       <span className="-inner">  
       <span>{getPageDate(page)}  </span>  
 
