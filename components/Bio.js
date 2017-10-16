@@ -27,7 +27,7 @@ const style = {
 class authorBio extends React.Component {
   render(){
     return(
-      <p style={style.p}>
+      <span style={style.p}>
       <Link to={prefixLink('/about/')} style={style.grl}>
         <img src="https://s3.eu-west-2.amazonaws.com/io1937/ghpages/linkedin.jpg" alt={config.authorName} style={style.img} />
       </Link>
@@ -35,7 +35,7 @@ class authorBio extends React.Component {
         <span className="authorbio">{config.authorBio}</span>
         <Link to={prefixLink('/about/')}>{config.authorName}</Link>
       </div>
-    </p>
+    </span>
     )
   }
 }
