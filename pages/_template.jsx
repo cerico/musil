@@ -69,7 +69,7 @@ class Template extends React.Component {
 
     return (
       <svg width="100%" height="47px" viewBox="0 0 1440 47" version="1.1" xmlns="http://www.w3.org/2000/svg" className="hero__div" preserveAspectRatio="xMinYMax meet">
-      <defs data-reactid="15">
+      <defs no="15">
     <pattern id="img1" patternUnits="userSpaceOnUse" x="0" y="0"  width="100" height="100">
     <image xlinkHref="https://f001.backblazeb2.com/file/margate/sda.png" x="0" y="0" width="100" height="100" />
   </pattern>
@@ -81,8 +81,8 @@ class Template extends React.Component {
 
 </pattern>
       </defs>
-      <g  id="Page-1" stroke="none" strokeWidth="1"  data-reactid="16">
-      <path d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z"  fill="url(#pattern1)" id="Path-9" data-reactid="17"></path></g>
+      <g  id="Page-1" stroke="none" strokeWidth="1"  no="16">
+      <path d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z"  fill="url(#pattern1)" id="Path-9" no="17"></path></g>
       </svg>
     )
   }
@@ -250,7 +250,7 @@ class Template extends React.Component {
 
 
  <path transform="scale(1, -1) translate(0, -47)"
- d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z" id="Path-9" fill="#9fcae3" data-reactid="19"></path>
+ d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z" id="Path-9" fill="#9fcae3" no="19"></path>
 </svg>
 
 
