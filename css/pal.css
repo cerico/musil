@@ -11,6 +11,10 @@ body {
     background:#FCF8ED !important
 }
 
+.events-list {
+    padding:7%
+}
+
 
 .hero__div {
     position: absolute;
@@ -189,7 +193,7 @@ schedule-item h2 {
 {
 .main-column-right {
     float: left;
-    width: 83.3333333333%;
+    width: 90%;
 }
 }
 

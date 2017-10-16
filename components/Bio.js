@@ -13,7 +13,7 @@ const style = {
       marginRight: rhythm(0.25),
       width: rhythm(4),
       height: rhythm(4),
-      borderRadius: '50%',
+      borderRadius: '28%',
       border: '1px gray solid'
     },
     p: {
