@@ -11,7 +11,8 @@ import includes from 'lodash/includes'
 import LinksBar from '../components/LinksBar'
 import Bio from '../components/Bio'
 
-const grainy = require('grainy');
+// const municipal = require('../utils/grainy');
+import { municipal } from '../utils/grainy'
 
 
 
@@ -20,6 +21,13 @@ const logoSize = 60
 const smallerLogoSize = 35
 
 class Template extends React.Component {
+
+  constructor(){
+    super()
+   
+    this.municipal = municipal      
+    
+  }
 
   heart()
   {
@@ -80,11 +88,12 @@ class Template extends React.Component {
   }
 
   componentDidMount(){
-    
+     
      const node = ReactDOM.findDOMNode(this);
      console.log(node)
      console.log(document.getElementById('blueboy'))
-     node.grainy({
+    //  Municipal(node)
+     let opts = ({
        intensity: 1,
        size: 525,
        color: '#000000',
@@ -92,10 +101,12 @@ class Template extends React.Component {
        opacity: 0.12,
        monochrome: true,
      });
+   
+     this.municipal.grainy(node,opts)
      var u = document.getElementById('u')
      var hero = document.getElementById('hero')
      u.setAttribute('src',node.style['background-image'])
-     hero.grainy({
+     opts = ({
       intensity: 1,
       size: 125,
       color: '#85b6d3',
@@ -104,6 +115,7 @@ class Template extends React.Component {
       opacity: 0.72,
       monochrome: true,
     });
+    this.municipal.grainy(hero,opts)
   
 
     }
