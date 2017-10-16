@@ -32,7 +32,7 @@ class Template extends React.Component {
     e.setAttribute("version","1.1" )
     var op = document.getElementById('blueboy')
     var s = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    s.setAttribute("d","M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z");
+    // s.setAttribute("d","M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z"  );
     // s.setAttribute("fill","url('http://www.visitoruk.com/images/franchises/Huddersfield/gallery/largegallery_6182.jpg')");
     // debugger
     var defs = document.createElementNS ('xmlns', "defs");
@@ -40,12 +40,10 @@ class Template extends React.Component {
     var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
     pattern.setAttribute('id','img2')
     pattern.setAttribute('patternUnits','userSpaceOnUse')
-    pattern.setAttribute('width','100')
-    pattern.setAttribute('height','100')
+  
     var image = document.createElementNS ('xmlns', "image");
     image.setAttribute('xlink:href',"http://www.visitoruk.com/images/franchises/Huddersfield/gallery/largegallery_6182.jpg")
-    image.setAttribute('width','100')
-    image.setAttribute('height','100')
+  
     image.setAttribute('x','0')
     image.setAttribute('y','0')
     pattern.appendChild(image)
@@ -53,25 +51,30 @@ class Template extends React.Component {
     e.appendChild(defs)
     g.appendChild(s);
     e.appendChild(g);
-    s.setAttributeNS(null,'fill','url(#img1)')
+    // s.setAttributeNS(null,'fill','url(#img1)')
     return e;
   }
 
   swirl(){
     // debugger
-    var op = document.getElementById('blueboy')
-    
-    var svg = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  
 
     return (
-      <svg width="100%" height="47px" viewBox="0 0 1440 47" version="1.1" xmlns="http://www.w3.org/2000/svg" className="hero__div" preserveAspectRatio="none">
+      <svg width="100%" height="47px" viewBox="0 0 1440 47" version="1.1" xmlns="http://www.w3.org/2000/svg" className="hero__div" preserveAspectRatio="xMinYMax meet">
       <defs data-reactid="15">
-    <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
-    <image xlinkHref="http://www.visitoruk.com/images/franchises/Huddersfield/gallery/largegallery_6182.jpg" x="0" y="0" width="100" height="100" />
+    <pattern id="img1" patternUnits="userSpaceOnUse" x="0" y="0"  width="100" height="100">
+    <image xlinkHref="https://f001.backblazeb2.com/file/margate/sda.png" x="0" y="0" width="100" height="100" />
   </pattern>
+  <pattern id="pattern1"
+  x="10" y="10" width="20" height="20"
+  patternUnits="userSpaceOnUse" >
+  <image id="u" xlinkHref="https://f001.backblazeb2.com/file/margate/runu.png" />
+<circle id="circle" cx="10" cy="10" r="100" style={{"opacity":"0","stroke": "none", "fill": "#0000ff"}} />
+
+</pattern>
       </defs>
       <g  id="Page-1" stroke="none" strokeWidth="1"  data-reactid="16">
-      <path d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z"  id="Path-9" data-reactid="17"></path></g>
+      <path d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z"  fill="url(#pattern1)" id="Path-9" data-reactid="17"></path></g>
       </svg>
     )
   }
@@ -85,20 +88,18 @@ class Template extends React.Component {
        intensity: 1,
        size: 525,
        color: '#000000',
-       backgroundColor: '#85b6d3',
+       backgroundColor: '#35b6d3',
        opacity: 0.12,
        monochrome: true,
      });
-     var u = document.getElementById('add-swirl')
-     var add = this.heart()
-     u.appendChild(add)
-   
-    //  this.swirl()
+     var u = document.getElementById('u')
+     u.setAttribute('src',node.style['background-image'])
+  
 
     }
 
 
-    updateSVG() {
+    updatedSVG() {
 
       // var el = document.querySelector('.icon-user');
       var el = document.getElementById('Path-9')
@@ -129,7 +130,7 @@ class Template extends React.Component {
       var oo = document.getElementById('blueboy')
    
       var z = document.getElementById('Path-9')
-      el.style.fill = 'url(#img1)'
+      // el.style.fill = 'url(#img1)'
   // debugger
   
 
@@ -169,7 +170,7 @@ class Template extends React.Component {
           </div>
    
          <div id="add-swirl">
-        
+         {this.swirl()}
         </div>
         </div>
     
@@ -201,7 +202,7 @@ class Template extends React.Component {
 <LinksBar/>
 </div>
 
-{this.swirl()}
+
 
 <PostTemplate posts={children}/>
 
