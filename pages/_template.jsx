@@ -103,7 +103,7 @@ class Template extends React.Component {
      this.municipal.grainy(node,opts)
      var u = document.getElementById('u')
      var hero = document.getElementById('hero')
-     u.setAttribute('src',node.style['background-image'])
+    //  u.setAttribute('src',node.style['background-image'])
      opts = ({
       intensity: 1,
       size: 125,
@@ -114,6 +114,17 @@ class Template extends React.Component {
       monochrome: true,
     });
     this.municipal.grainy(hero,opts)
+    var footer = document.getElementById('footer')
+    opts = ({
+      intensity: 1,
+      size: 125,
+      color: '#000000',
+      // backgroundColor: 'a9e274',
+      backgroundColor:'#1e1e1e',
+      opacity: 0.42,
+      monochrome: true,
+    });
+    this.municipal.grainy(footer,opts)
   
 
     }
@@ -244,13 +255,13 @@ class Template extends React.Component {
 
 
 
-<footer className="site-footer" role="contentinfo">
+<footer className="site-footer" id="footer">
 
 <svg width="100%" height="47px" viewBox="0 0 1440 100" version="1.1" xmlns="http://www.w3.org/2000/svg" className="hero__divu" preserveAspectRatio="none">
 
 
  <path transform="scale(1, -1) translate(0, -47)"
- d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z" id="Path-9" fill="#9fcae3" no="19"></path>
+ d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z" id="Path-9" fill="url(#pattern1)"  no="19"></path>
 </svg>
 
 
