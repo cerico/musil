@@ -84,13 +84,13 @@ function Municipal (id) {
 				}
 			}
 			
-			if (window.JSON && localStorageSupported && !options.disableCache) {
-				try {
-					localStorage.setItem(window.JSON.stringify(options), uri);
-				} catch(e) {
-					console.warn(e.message);
-				}
-			}
+			// if (window.JSON && localStorageSupported && !options.disableCache) {
+			// 	try {
+			// 		localStorage.setItem(window.JSON.stringify(options), uri);
+			// 	} catch(e) {
+			// 		console.warn(e.message);
+			// 	}
+			// }
 		}
 
 		function hexToRgb(hex) {

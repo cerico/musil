@@ -90,8 +90,6 @@ class Template extends React.Component {
   componentDidMount(){
      
      const node = ReactDOM.findDOMNode(this);
-     console.log(node)
-     console.log(document.getElementById('blueboy'))
     //  Municipal(node)
      let opts = ({
        intensity: 1,
