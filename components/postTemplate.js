@@ -11,9 +11,9 @@ import includes from 'lodash/includes'
 import LinksBar from '../components/LinksBar'
 import Bio from '../components/Bio'
 // const grainy = require('grainy');
-// const grainy = require('../utils/grainy');
+// const grainy = require('../uticjhrls/grainy');
 
-
+import { municipal } from '../utils/grainy'
 
 
 const logoSize = 60
@@ -21,18 +21,24 @@ const smallerLogoSize = 35
 
 class PostTemplate extends React.Component {
 
+  constructor(){
+    super()
+    this.municipal = municipal
+  }
+
   componentDidMount(){
     
      const node = ReactDOM.findDOMNode(this);
-    //  node.grainy({
-    //    intensity: 1,
-    //    size: 525,
-    //    color: '#000000',
-    //    backgroundColor: '#4cba7a',
-    //    backgroundColor:'#79a613',
-    //    opacity: 0.12,
-    //    monochrome: true,
-    //  });
+     let opts = ({
+       intensity: 1,
+       size: 525,
+       color: '#000000',
+       backgroundColor: '#4cba7a',
+       backgroundColor:'#79a613',
+       opacity: 0.12,
+       monochrome: true,
+     });
+     this.municipal.grainy(node,opts)
     }
  
   
