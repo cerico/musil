@@ -22,6 +22,7 @@ const style = {
     color:'#7e9aa3',
     color:'#8ab1d6',
     color:'#707274',
+    color:'#fff',
     fontWeight:'800'
   }
 }

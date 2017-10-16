@@ -233,6 +233,7 @@ h1 {
   /* font-family: "Raleway", sans-serif; */
   font-weight: 100;
   color: #442f34;
+  color:rgba(0, 0, 0, 0.8);
   text-rendering: optimizeLegibility;
   line-height: 1;
   text-transform:none;
@@ -407,6 +408,7 @@ h1:after{
   color:#7e9aa3;
   color:rgb(138,177,214);
   color:#707274;
+  color:#fff;
   font-weight:800
 }
 .headroom-wrapper{

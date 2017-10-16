@@ -88,12 +88,22 @@ class Template extends React.Component {
        intensity: 1,
        size: 525,
        color: '#000000',
-       backgroundColor: '#35b6d3',
+       backgroundColor: '#85b6d3',
        opacity: 0.12,
        monochrome: true,
      });
      var u = document.getElementById('u')
+     var hero = document.getElementById('hero')
      u.setAttribute('src',node.style['background-image'])
+     hero.grainy({
+      intensity: 1,
+      size: 125,
+      color: '#85b6d3',
+      backgroundColor: 'a9e274',
+      backgroundColor:'#96d15b',
+      opacity: 0.72,
+      monochrome: true,
+    });
   
 
     }
@@ -164,7 +174,7 @@ class Template extends React.Component {
     return (
       <div className="content" id="blueboy"> 
         <div style={style.top}>
-          <div role="hero" className="hero">
+          <div id="hero" role="hero" className="hero">
           <Link  to="/" className="inverse-topper">Cerico</Link>
           <h3>Javascript, Docker, Elixir, Nginx, and other fun and games</h3>
           </div>

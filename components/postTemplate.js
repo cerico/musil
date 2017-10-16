@@ -28,6 +28,7 @@ class PostTemplate extends React.Component {
        size: 525,
        color: '#000000',
        backgroundColor: '#4cba7a',
+       backgroundColor:'#79a613',
        opacity: 0.12,
        monochrome: true,
      });
