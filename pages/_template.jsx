@@ -63,27 +63,40 @@ class Template extends React.Component {
     return e;
   }
 
+j(){
+  <svg width="100%" height="47px" viewBox="0 0 1440 47" version="1.1" xmlns="http://www.w3.org/2000/svg" className="hero__div" preserveAspectRatio="xMinYMax meet">
+  <defs>
+<pattern id="img1" patternUnits="userSpaceOnUse" x="0" y="0"  width="100px" height="100px">
+<image xlinkHref="https://f001.backblazeb2.com/file/margate/sda.png" x="0" y="0" width="100px" height="100px" />
+</pattern>
+<pattern id="pattern1"
+x="10" y="10" width="20" height="20"
+patternUnits="userSpaceOnUse" >
+<image id="u" xlinkHref="http://www.visitoruk.com/images/franchises/Huddersfield/gallery/largegallery_6182.jpg" />
+
+</pattern>
+  </defs>
+ </svg>
+}
+
   swirl(){
     // debugger
   
 
     return (
-      <svg width="100%" height="47px" viewBox="0 0 1440 47" version="1.1" xmlns="http://www.w3.org/2000/svg" className="hero__div" preserveAspectRatio="xMinYMax meet">
-      <defs no="15">
-    <pattern id="img1" patternUnits="userSpaceOnUse" x="0" y="0"  width="100" height="100">
-    <image xlinkHref="https://f001.backblazeb2.com/file/margate/sda.png" x="0" y="0" width="100" height="100" />
-  </pattern>
-  <pattern id="pattern1"
-  x="10" y="10" width="20" height="20"
-  patternUnits="userSpaceOnUse" >
-  <image id="u" xlinkHref="https://f001.backblazeb2.com/file/margate/runu.png" />
-<circle id="circle" cx="10" cy="10" r="100" style={{"opacity":"0","stroke": "none", "fill": "#0000ff"}} />
+   
 
-</pattern>
-      </defs>
-      <g  id="Page-1" stroke="none" strokeWidth="1"  no="16">
-      <path d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z"  fill="url(#pattern1)" id="Path-9" no="17"></path></g>
-      </svg>
+<svg width="100%" height="47" viewBox="0 0 1440 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="hero__div" preserveAspectRatio="xMinYMax meet">
+
+<defs>
+   <pattern id="img8" patternUnits="userSpaceOnUse"  width="57px" height="47px">
+       <image xlinkHref="https://f001.backblazeb2.com/file/margate/runu.png" width="57px" height="47px" />
+   </pattern>
+</defs>
+<g  id="Page-1" stroke="none" strokeWidth="1">
+<path d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z"  fill="url(#img8)" id="Path-9"></path></g>
+</svg>
+
     )
   }
 
@@ -261,7 +274,7 @@ class Template extends React.Component {
 
 
  <path transform="scale(1, -1) translate(0, -47)"
- d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z" id="Path-9" fill="url(#pattern1)"  no="19"></path>
+ d="M0,0.0577405639 C117.504588,18.44359 269.602477,22.1720696 456.293666,11.2431795 C562.076057,5.05068514 730.784198,0.911127653 885.297232,3.27366179 C1157.17617,7.43074321 1386.98062,21.3276838 1440,38.3891927 L1440,46.9388979 L0,46.9388979 L0,0.0577405639 Z" id="Path-9" fill="url(#img8)"></path>
 </svg>
 
 
