@@ -108,14 +108,20 @@ class PostsIndex extends React.Component {
   
     const tag = this.props.location.hash.replace('#', '')
     const allTags = tag ? [] : getAllTags(this.props.route.pages)
+    allTags.map(e => console.log(e))
    const mate = getAllTags(this.props.route.pages)
+  //  debugger
 
    return (
  
         <div className="page-content" style={style.about}>
-        <div title={tag ? `${tag} - ${config.blogTitle}` : config.blogTitle}>
+        <div title={tag.length > 0 ? `${tag} - ${config.blogTitle}` : <span>tags</span>}>
         <div>
-          {tag ? <ShowTag tag={tag} pages={this.props.route.pages} /> : null}
+          {tag.length > 0 ? 
+            <ShowTag tag={tag} pages={this.props.route.pages} /> 
+            : 
+            allTags.map(e => e)
+            }
         </div>
       </div>
 

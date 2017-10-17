@@ -158,6 +158,7 @@ schedule-item h2 {
 .main-column-left {
     float: left;
     width: 16.6666666667%;
+    width:10%
 }
 }
 .main-column-left {
@@ -206,9 +207,9 @@ schedule-item h2 {
 
 .site-main .content-left {
     max-width: 55%;
-    -ms-flex-preferred-size: 10%;
-    flex-basis: 10%;
-    padding-right: 60px;
+    -ms-flex-preferred-size: 15%;
+    flex-basis: 15%;
+    /* padding-right: 60px; */
 }
 }
 

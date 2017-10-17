@@ -4,7 +4,7 @@ import 'css/pal.css'
 import Helmet from "react-helmet"
 import { config } from 'config'
 import { getPageDate } from '../utils/getPageDate'
-import Tags from '../components/Tags'
+import { Tags } from '../components/Tags'
 import Bio from '../components/Bio'
 import LinksBar from '../components/LinksBar'
 

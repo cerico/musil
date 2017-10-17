@@ -10,9 +10,11 @@ import flatten from 'lodash/flatten'
 import includes from 'lodash/includes'
 import LinksBar from '../components/LinksBar'
 import Bio from '../components/Bio'
-
+import {AllTags} from '../components/Tags'
+import  {getAllTags } from '../utils/getAllTags'
 // const municipal = require('../utils/grainy');
 import { municipal } from '../utils/grainy'
+import { Swimmer } from '../components/Swimmer'
 
 
 
@@ -25,8 +27,15 @@ class Template extends React.Component {
   constructor(){
     super()
    
-    this.municipal = municipal      
+    this.municipal = municipal    
+    this.getAllTags = getAllTags  
     
+  }
+  
+  showDemTags(){
+    const allTags = getAllTags(this.props.route.pages)
+    const tags = this.props.route.pages.filter
+    return (allTags.map(tag => <Swimmer pages={this.props.route.pages} key={tag} tag={tag}/>))
   }
 
   heart()
@@ -201,6 +210,10 @@ patternUnits="userSpaceOnUse" >
       },
       top: {
         position:'relative'
+      },
+      tagCol:  {
+        marginLeft:'5%',
+        marginTop: '2%'
       }
     }
     const { children } = this.props
@@ -242,8 +255,10 @@ patternUnits="userSpaceOnUse" >
 
 <div className="content-left flex-item one-half">
 
+
 <Bio/>
 <LinksBar/>
+
 </div>
 
 
@@ -251,12 +266,11 @@ patternUnits="userSpaceOnUse" >
 <PostTemplate posts={children}/>
 
 
-
-
-</div>
+<div style={style.tagCol}>{this.showDemTags()}</div>
 
 </div>
 
+</div>
 
 
 
