@@ -295,7 +295,7 @@ schedule-item h2 {
 @media screen and (min-width: 768px)
 {
 .site-main .content-right {
-    max-width: 72%;
+    max-width: 61%;
     -ms-flex-preferred-size: 88%;
     flex-basis: 88%;
     padding-left: 60px;

@@ -9,6 +9,9 @@ import { tagMap } from '../utils/tagMap'
 import {  getTags } from '../utils/getAllTags'
 
 
+
+const colours = ["orange","yellow","white","green","purple"]
+
 const style = {
 
     p: {
@@ -16,26 +19,40 @@ const style = {
       width:'100%',
       display:'inline-block',
       border:'2px solid white',
-      marginBottom: '1.23rem',
       textAlign:'center',
-      paddingTop:'7%',
+      // paddingTop:'7%',
       width: '80px',
         display: 'block',
         border: '2px solid white',
         height: '80px',
         background: 'yellow',
         marginRight: '20px',
-        color:'#ffffff'
+        color:'#ffffff',
+        fontWeight:'800'
+    },
+    s: {
+      fontWeight:'800',
+      color:'#ffffff',
+      display:'inline-block'
     },
     q: {
       fontSize:'50%',
-      color:'yellowgreen',
+      color:'#1e1e1e',
       fontWeight:'100'
     },
     r: {
       fontSize:'150%',
-      color:'yellowgreen',
-      fontWeight:'100'
+      color:'#ffffff',
+      fontWeight:'100',
+      background:'yellow',
+      fontSize: '150%',
+      color: '#000',
+            fontWeight: '100',
+      background: colours[parseInt(Math.random()*5)],
+      /* width: 60px; */
+      paddingLeft: '10px',
+      borderRadius: '50%',
+      paddingRight: '10px'
     }
     
   }
@@ -54,7 +71,7 @@ const style = {
            intensity: 1,
            size: 525,
            color: '#000000',
-           backgroundColor: '#134568',
+           backgroundColor: '#758ac6',
            opacity: 0.12,
            monochrome: true,
          });
@@ -68,9 +85,29 @@ const style = {
     .filter(page => this.getTags(page).map(tagMap).indexOf(this.props.tag) !== -1).length
         return(
           <Link to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(this.props.tag)}` }} style={style.p}>
-          {this.props.tag.substr(0,2)}<br/>
+          <svg width="137" height="47" viewBox="1 1 1 94" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"  preserveAspectRatio="xMinYMax meet">
+          
+          <path d="M20,20 l20,20 l0,20 l-20,20 Z"
+          style={{stroke: '#3333cc',fill:'none'}} />
+    
+    <path d="M20,20 l20,20 l0,20 l-20,20 Z"
+    style={{stroke: '#3333cc',fill:'none'}} 
+          transform="translate(100, 0) scale(-1, 1) " />
+     </svg>
+          <div style={style.s}>{this.props.tag.substr(0,2)}</div><br/>
           <div style={style.q}>{this.props.tag}<br/>
-          <span style={style.r}>{taggedPages}</span>
+          <span style={{fontSize:'150%',
+          color:'#ffffff',
+          fontWeight:'100',
+          background:'yellow',
+          fontSize: '150%',
+          color: '#000',
+                fontWeight: '100',
+          background: colours[parseInt(Math.random()*5)],
+          /* width: 60px; */
+          paddingLeft: '10px',
+          borderRadius: '50%',
+          paddingRight: '10px'}}>{taggedPages}</span>
           </div>
           
         </Link>

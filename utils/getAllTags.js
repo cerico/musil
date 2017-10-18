@@ -13,11 +13,9 @@ export function getTags (page) {
 
 export function getAllTags (pages) {
     var s = pages.map(page => getTags(page))
-    var r = s.map(e =>
-        console.log(e)
-        // tagMap(e)
-    )
+  
     // var t = [].concat(...pages.map(page => getTags(page).map(tagMap)))
      var t = uniq([].concat(...pages.map(page => getTags(page).map(tagMap)))).sort()
+     
      return t
   }

@@ -11,10 +11,12 @@ import includes from 'lodash/includes'
 import LinksBar from '../components/LinksBar'
 import Bio from '../components/Bio'
 import {AllTags} from '../components/Tags'
-import  {getAllTags } from '../utils/getAllTags'
+import  {getAllTags, getTags } from '../utils/getAllTags'
 // const municipal = require('../utils/grainy');
 import { municipal } from '../utils/grainy'
 import { Swimmer } from '../components/Swimmer'
+import { tagMap } from '../utils/tagMap'
+
 
 
 
@@ -29,13 +31,18 @@ class Template extends React.Component {
    
     this.municipal = municipal    
     this.getAllTags = getAllTags  
+    this.getTags = getTags
+    this.tagMap = tagMap
     
   }
   
   showDemTags(){
     const allTags = getAllTags(this.props.route.pages)
     const tags = this.props.route.pages.filter
-    return (allTags.map(tag => <Swimmer pages={this.props.route.pages} key={tag} tag={tag}/>))
+
+    
+    return (
+      allTags.map(tag => <Swimmer pages={this.props.route.pages} key={tag} tag={tag}/>))
   }
 
   heart()
@@ -213,7 +220,13 @@ patternUnits="userSpaceOnUse" >
       },
       tagCol:  {
         marginLeft:'5%',
-        marginTop: '2%'
+        marginTop: '2%',
+    
+      },
+      categories:{
+        color: 'rgb(255, 255, 255)',
+        fontWeight: '800',
+        paddingBottom:'3%'
       }
     }
     const { children } = this.props
@@ -266,7 +279,9 @@ patternUnits="userSpaceOnUse" >
 <PostTemplate posts={children}/>
 
 
-<div style={style.tagCol}>{this.showDemTags()}</div>
+<div style={style.tagCol}>
+<div style={style.categories}>categories</div>
+{this.showDemTags()}</div>
 
 </div>
 
