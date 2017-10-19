@@ -46,13 +46,16 @@ const style = {
       fontWeight:'100',
       background:'yellow',
       fontSize: '150%',
-      color: '#000',
+      color: '#fff',
             fontWeight: '100',
-      background: colours[parseInt(Math.random()*5)],
+      // background: colours[parseInt(Math.random()*5)],
       /* width: 60px; */
       paddingLeft: '10px',
       borderRadius: '50%',
       paddingRight: '10px'
+    },
+    tod: {
+      // backgroundImage: `radial-gradient(circle at 100% 0, ${colours[parseInt(Math.random()*5)]} 14px, rgba(0,0,0,0) 0px)`
     }
     
   }
@@ -80,37 +83,31 @@ const style = {
     }
 
   render(){
-  
+    const cornerColour = colours[parseInt(Math.random()*5)]
     const taggedPages = this.props.pages
     .filter(page => this.getTags(page).map(tagMap).indexOf(this.props.tag) !== -1).length
         return(
-          <Link to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(this.props.tag)}` }} style={style.p}>
-          <svg width="137" height="47" viewBox="1 1 1 94" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"  preserveAspectRatio="xMinYMax meet">
           
-          <path d="M20,20 l20,20 l0,20 l-20,20 Z"
-          style={{stroke: '#3333cc',fill:'none'}} />
-    
-    <path d="M20,20 l20,20 l0,20 l-20,20 Z"
-    style={{stroke: '#3333cc',fill:'none'}} 
-          transform="translate(100, 0) scale(-1, 1) " />
-     </svg>
+          <Link id="thelink" to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(this.props.tag)}` }} style={style.p}>
+          <div style={{backgroundImage: `radial-gradient(circle at 100% 0, ${cornerColour} 14px, rgba(0,0,0,0) 0px)`}}>
+ 
           <div style={style.s}>{this.props.tag.substr(0,2)}</div><br/>
           <div style={style.q}>{this.props.tag}<br/>
           <span style={{fontSize:'150%',
           color:'#ffffff',
           fontWeight:'100',
-          background:'yellow',
+          // background:'yellow',
           fontSize: '150%',
-          color: '#000',
+          color: '#fff',
                 fontWeight: '100',
-          background: colours[parseInt(Math.random()*5)],
           /* width: 60px; */
           paddingLeft: '10px',
           borderRadius: '50%',
           paddingRight: '10px'}}>{taggedPages}</span>
           </div>
-          
+          </div>
         </Link>
+      
         )
     }
   }
