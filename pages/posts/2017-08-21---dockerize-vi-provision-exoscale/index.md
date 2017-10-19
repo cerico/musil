@@ -7,7 +7,7 @@ tags:
   - Nginx
   - Exoscale
   - 'Digital Ocean'
-  - Deployment
+  - Deploy
   - CoreOS
 brief: Full Stack Docker Application Part 6 - How to send dockerized application to production environment, on Exoscale, Digital Ocean and AWS.
 ---

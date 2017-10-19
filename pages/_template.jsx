@@ -226,7 +226,9 @@ patternUnits="userSpaceOnUse" >
       categories:{
         color: 'rgb(255, 255, 255)',
         fontWeight: '800',
-        paddingBottom:'3%'
+        paddingBottom:'3%',
+        textAlign:'left',
+        marginLeft:'19px'
       }
     }
     const { children } = this.props
@@ -280,7 +282,7 @@ patternUnits="userSpaceOnUse" >
 
 
 <div style={style.tagCol}>
-<div style={style.categories}>categories</div>
+<div style={style.categories}>Tags</div>
 {this.showDemTags()}</div>
 
 </div>

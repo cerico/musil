@@ -7,6 +7,7 @@ import { municipal } from '../utils/grainy'
 import ReactDOM from 'react-dom'
 import { tagMap } from '../utils/tagMap'
 import {  getTags } from '../utils/getAllTags'
+import { tagLookup } from '../utils/tagLookup' 
 
 
 
@@ -36,16 +37,17 @@ const style = {
       display:'inline-block'
     },
     q: {
-      fontSize:'50%',
+      fontSize:'2vh',
+      overflow:'scroll',
       color:'#1e1e1e',
       fontWeight:'100'
     },
     r: {
-      fontSize:'150%',
+      fontSize:'1rem',
       color:'#ffffff',
       fontWeight:'100',
       background:'yellow',
-      fontSize: '150%',
+      // fontSize: '150%',
       color: '#fff',
             fontWeight: '100',
       // background: colours[parseInt(Math.random()*5)],
@@ -65,6 +67,7 @@ const style = {
     constructor(){
         super()
         this.getTags = getTags
+        this.tagLookup = tagLookup
     }
 
     componentDidMount(){
@@ -83,7 +86,10 @@ const style = {
     }
 
   render(){
-    const cornerColour = colours[parseInt(Math.random()*5)]
+    const tagObject = this.tagLookup(this.props.tag)
+    console.log(tagObject)
+    const cornerColour = tagObject.shade
+    console.log(cornerColour)
     const taggedPages = this.props.pages
     .filter(page => this.getTags(page).map(tagMap).indexOf(this.props.tag) !== -1).length
         return(
@@ -91,20 +97,23 @@ const style = {
           <Link id="thelink" to={{ pathname: prefixLink('/tags/'), hash: `#${tagMap(this.props.tag)}` }} style={style.p}>
           <div style={{backgroundImage: `radial-gradient(circle at 100% 0, ${cornerColour} 14px, rgba(0,0,0,0) 0px)`}}>
  
-          <div style={style.s}>{this.props.tag.substr(0,2)}</div><br/>
-          <div style={style.q}>{this.props.tag}<br/>
+          <div style={style.s}>{tagObject.shortName} 
           <span style={{fontSize:'150%',
           color:'#ffffff',
           fontWeight:'100',
           // background:'yellow',
-          fontSize: '150%',
+          fontSize: '100%',
           color: '#fff',
-                fontWeight: '100',
+                fontWeight: '400',
           /* width: 60px; */
           paddingLeft: '10px',
           borderRadius: '50%',
           paddingRight: '10px'}}>{taggedPages}</span>
-          </div>
+          </div><br/>
+         
+     
+          <div style={style.q}>{this.props.tag} </div>
+         
           </div>
         </Link>
       
