@@ -15,7 +15,7 @@ fs = require('fs');
 
 prompt.start();
 
-prompt.get(['title'], function(err, result) {
+prompt.get(['title', 'brief', 'tags (separate with commas)'], function(err, result) {
   var dir, frontmatter, postFileStr;
   dir = "./pages/posts/" + (moment().format('YYYY-MM-DD')) + "---" + (_str.slugify(result.title));
   mkdirp.sync(dir);
@@ -24,6 +24,8 @@ prompt.get(['title'], function(err, result) {
     title: result.title,
     date: moment().format('YYYY-MM-DD'),
     layout: 'post',
+    brief: result['brief'],
+    tags: result['tags (separate with commas)'].split(',')
     // path: `/${result.title}/`
   };
   postFileStr += yaml.safeDump(frontmatter);
